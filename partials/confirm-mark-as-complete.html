@@ -1,0 +1,81 @@
+<!-- The confirmCompleteModal -->
+<div id="confirm-as-complete-modal" class="modal">
+
+    <!-- confirmCompleteModal content -->
+    <div class="modal-content-non-bs">
+
+        <div class="card-body">
+            <h5 class="card-title">Do you wish to mark job complete?</h5>
+            <h6 class="card-subtitle text-muted">Job: {[{ jidData.jid }]}</h6>
+
+            <form style="margin-top: 24px;">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                        The job has completed successfully.
+                    </label>
+                </div>
+            </form>
+
+            <button type="submit" style="display: none;" class="btn btn-success" id="confirmModalBtn" ng-click="markJobSuccessful()">Confirm</button>
+            <button type="button" class="btn btn-secondary" id="cancelUpdateModalBtn">Cancel</button>
+        </div>
+            
+    </div>
+
+</div>
+
+
+<script>
+    // Get the confirmCompleteModal
+    var confirmCompleteModal = document.getElementById("confirm-as-complete-modal");
+
+    // Get the button that opens the confirmCompleteModal
+    var confirmBtn = document.getElementById("mark-complete-button");
+
+    // Get the button that closes the confirmCompleteModal
+    var cancelUpdateModalBtn = document.getElementById("cancelUpdateModalBtn");
+
+    // Get the button that saves the confirmCompleteModal
+    var confirmModalBtn = document.getElementById("confirmModalBtn");
+
+    // Get the <span> element that closes the confirmCompleteModal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the confirmCompleteModal 
+    confirmBtn.onclick = function () {
+        showConfirmCompleteModal();
+    }
+
+    // Toggle the confirm button
+    $('#gridCheck').click(function () {
+        console.log('toggle');
+        $("#confirmModalBtn").toggle();
+    });
+
+    cancelUpdateModalBtn.onclick = function() {
+        closeConfirmCompleteModal();
+    }
+
+    confirmModalBtn.onclick = function() {
+        closeConfirmCompleteModal();
+    }
+
+    // When the user clicks anywhere outside of the confirmCompleteModal, close it
+    window.onclick = function (event) {
+        if (event.target == confirmCompleteModal) {
+            closeConfirmCompleteModal();
+        }
+    }
+
+    // Close the confirmCompleteModal function
+    var closeConfirmCompleteModal = function() {
+        confirmCompleteModal.style.display = "none";
+    }
+
+    // Open the confirmCompleteModal function
+    var showConfirmCompleteModal = function() {
+        confirmCompleteModal.style.display = "block";
+    }
+
+</script>
