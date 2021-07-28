@@ -1,0 +1,21 @@
+<div class="card-body">
+  <h5 class="card-title">Pending Jobs <span ng-if="queue.length > 0" class="badge badge-secondary">{[{ queue.length }]}</span></h5>
+  <div ng-if="queue.length == 0">
+    No queued jobs
+  </div>
+  <div ng-if="queue.length < 0">
+    Error fetching jobs
+  </div>
+  <div ng-if="queue.length > 0">
+
+    <ul class="list-group list-group-flush">
+      <li style="padding-left: 0px;" class="job-list-item list-group-item" ng-repeat="(key, value) in queue.response" ng-click="updateActive(key)">
+        <strong><a href="/jobs/{[{ key }]}" class="text-dark">{[{ key }]}</a></strong>
+        <div style="margin-top: 4px;">
+          <span ng-repeat="(constraintKey, constraintVal) in value.constraints" style="margin-right: 4px;" class="badge badge-info">{[{ constraintKey }]}</span>
+        </div>
+      </li>
+    </ul>
+
+  </div>
+</div>
