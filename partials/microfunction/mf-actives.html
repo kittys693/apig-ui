@@ -1,0 +1,23 @@
+<div class="card-body">
+    <h5 class="card-title">Active Jobs <span class="badge badge-secondary">{[{ activeJobs.count }]}</span></h5>
+
+    <div ng-if="activeJobs.fetched">
+        
+        <div ng-if="activeJobs.count > 0" class="list-group">
+            <a ng-repeat="job in activeJobs.jobs" href="/jobs/{[{ job.apig_jid }]}" class="list-group-item list-group-item-action"><strong>{[{ job.apig_jid }]}</strong></a>
+        </div>
+
+        <div ng-if="!activeJobs.count > 0">
+            <p>It's quite... no jobs</p>
+        </div>
+
+    </div>
+
+    <div ng-if="!activeJobs.fetched" class="spinner-border text-primary" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+
+    <!-- <button style="margin-top: 24px; width: 100%" type="button" id="create-new-job-button" class="btn btn-info"><small>CREATE NEW</small></button> -->
+
+
+</div>
