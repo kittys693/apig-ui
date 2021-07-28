@@ -1,0 +1,59 @@
+<div class="card-body">
+
+    <h5 class="card-title">Analytics</h5>
+
+    <div ng-if="analytics.ready">
+        <h6 style="margin-top: 8px;">Monthly impressions</h6>
+        <p><samp>{[{ analytics.data.monthlyImpressions }]} job(s)</samp></p>
+
+        <h6 style="margin-top: 8px;">Average runtime</h6>
+        <p><samp>{[{ analytics.data.averageRuntime }]}</samp></p>
+        
+        <h6 style="margin-top: 8px;">60-day success rate</h6>
+        <p><samp>{[{ analytics.data.latestSuccessRate }]}%</samp></p>
+            
+        <h6 style="margin-top: 8px;">Previous Jobs</h6>
+        <div ng-if="analytics.data.lastFive.length == 0">
+            <p>Nothing found</p>
+        </div>
+        <div ng-if="!analytics.data.lastFive.length == 0" class="list-group">
+            <a ng-repeat="job in analytics.data.lastFive" href="/jobs/{[{ job.apig_jid }]}" class="list-group-item list-group-item-action"><strong>{[{ job.apig_jid }]}</strong></a>
+        </div>
+    </div>
+
+    <div ng-if="!analytics.ready">
+        <h6 style="margin-top: 8px;">Monthly impressions</h6>
+        <div class="spinner-grow text-primary" role="status">
+        <span class="sr-only">Loading...</span>
+        </div>
+
+        <h6 style="margin-top: 8px;">Average runtime</h6>
+        <div class="spinner-grow text-secondary" role="status">
+        <span class="sr-only">Loading...</span>
+        </div>
+
+        <h6 style="margin-top: 8px;">60-day success rate</h6>
+        <div class="spinner-grow text-success" role="status">
+        <span class="sr-only">Loading...</span>
+        </div>
+
+        <h6 style="margin-top: 8px;">Last 5 jobs</h6>
+        <div class="spinner-grow text-danger" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-grow text-warning" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-grow text-info" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-grow text-primary" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-grow text-dark" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+
+
+</div>
