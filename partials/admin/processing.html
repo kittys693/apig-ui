@@ -1,0 +1,7 @@
+<div class="alert alert-success" role="alert" ng-if="procLockState.response.unlocked">
+    Jobs are processing <a href="#" class="alert-link" ng-click="lockProcessing()">(click to lock processing)</a>
+</div>
+
+<div class="alert alert-warning" role="alert" ng-if="procLockState.response.unlocked == false">
+    Jobs are not processing <a href="#" class="alert-link" ng-click="unlockProcessing()">(click to unlock processing)</a>
+</div>
