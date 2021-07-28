@@ -1,0 +1,23 @@
+<div class="card-body">
+
+    <!-- Parent job reference -->
+    <div>
+        <h5 class="card-title">Downstream Service</h5>
+        <h6 style="margin-bottom: 16px;" class="card-subtitle text-muted"><a href="{[{ microfunctionData.data.meta.readme }]}">View README</a></h6>
+
+        <h6 style="margin-top: 8px;">API Information</h6>
+        <p><samp>{[{ microfunctionData.data.service.protocol }]}://{[{ microfunctionData.data.service.host }]}{[{ microfunctionData.data.service.path }]}</samp></p>
+
+        <h6 style="margin-top: 16px;">Methods</h6>
+        <ul>
+            <li ng-repeat="method in microfunctionData.data.route.methods"><samp>{[{ method }]}</samp></li>
+        </ul>
+
+        <h6 style="margin-top: 16px;">Paths</h6>
+        <ul>
+            <li ng-repeat="path in microfunctionData.data.route.paths"><samp>{[{ path }]}</samp></li>
+        </ul>
+        <!-- <button ng-if="microfunctionData.isOwner" style="margin-top: 16px;" type="button" id="create-new-job-button" class="btn btn-info"><small>EDIT</small></button> -->
+
+    </div>
+</div>
