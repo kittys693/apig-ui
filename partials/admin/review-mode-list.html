@@ -1,0 +1,15 @@
+<div class="card-body">
+    <h5 class="card-title">Review Mode List </h5>
+    <form ng-submit="addToReviewModeList(reviewModeMf)">
+        
+        <div class="form-group">
+          <input type="text" class="form-control" id="mfReviewModeAddition" ng-model="reviewModeMf" placeholder="Add micro function to review mode...">
+        </div>
+        
+        <div class="review-mode-mfs-container" ng-if="reviewModeList.length > 0">
+            <p class="review-mode-mf-box" ng-repeat="item in reviewModeList.response">{[{ item }]}<span class="rem-mf-span" ng-click="removeFromReviewModeList(item)">x</span></p>
+        </div>
+
+    </form>
+</div>
+  
