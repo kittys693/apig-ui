@@ -1,0 +1,138 @@
+<!-- The Modal -->
+<div id="editModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content-non-bs">
+
+        <div class="card-body">
+            <h5 class="card-title">Edit Job</h5>
+            <h6 class="card-subtitle text-muted">{[{ jidData.jid }]}</h6>
+
+            <p class="text-info">{[{ jidData['data']['orig-req-path'] }]}</p>
+
+            <div style="margin-bottom: 24px;" class="form-group">
+                    <p><strong>Edit Inputs</strong></p>
+                    <div id="edit-input-container">
+                    </div> 
+            </div>
+
+            <span id="edit-add-input-btn" class="btn btn-primary" style="width: 100%; margin-bottom: 24px;">Add Input</span>
+
+            <button type="button" class="btn btn-success" id="saveEditModalBtn" ng-click="editJobSbmt()">Save changes</button>
+            <button type="button" class="btn btn-secondary" id="closeEditModalBtn">Close</button>
+        </div>
+            
+    </div>
+
+</div>
+
+
+<script>
+    var restorableInputs = {}; // this is current payload requested by user, captured in memory but based on text
+    var proposedInputs = {}; // this is the proposed payload requested by user, captured in memory
+
+    var dummyData = '{"hello-fraunchless-20191115-183500-8289": {"body": {"inputs": {"foo": "bar"}}, "constraints": {},"method": "POST", "path": "https://kong-sandbox.healthpartners.com/hello-fraunchless/", "submitTime": "11/15/2019,18:35:00", "uriArgs": {}}, "hello-fraunchless-20191115-183637-8039": {"body": {"inputs": {"baz": "zap", "c": 23,"d": {"e": "f"}, "seven": [{"1": "2"}, {"a": "b"}]}}, "constraints": {}, "method": "POST", "path": "https://kong-sandbox.healthpartners.com/hello-fraunchless/", "submitTime": "11/15/2019, 18:36:37", "uriArgs": {}}}';
+    var q = JSON.parse(dummyData);
+
+    // Get the modal
+    var modal = document.getElementById("editModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("editBtn");
+
+    // Get the button that closes the modal
+    var closeEditModalBtn = document.getElementById("closeEditModalBtn");
+
+    // Get the button that saves the modal
+    var saveEditModalBtn = document.getElementById("saveEditModalBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    $("#edit-add-input-btn").click(function() {
+        var newInputContainer = $('<div class="edit-input-new"><label>Input: </label><input class="edit-input-new-key" style="margin-left: 8px; padding-left: 8px;" type="text" placeholder="Input key"><label style="margin-left: 16px;">Value: </label><input class="edit-input-new-val" style="margin-left: 8px; padding-left: 8px;" type="text" placeholder="Input value"><i class="material-icons" style="cursor: pointer;" onclick="removeEditInput(this)">delete</i></div>');
+        
+        $("#edit-input-container").append(newInputContainer);
+    })
+
+    // When the user clicks the button, open the modal 
+    btn.onclick = function () {
+        showModal();
+    }
+
+    var removeEditInput = function(el) {
+        $(el).parent().remove();
+    }
+
+    var removeUriArgsInput = function(el) {
+        $(el).parent().remove();
+    }
+
+    closeEditModalBtn.onclick = function() {
+        closeModal();
+    }
+
+    saveEditModalBtn.onclick = function() {
+        closeModal();
+    }
+
+    // Update the default payload
+    // Run when modal opens
+    var updateRestorableInputs = function() {
+        var jobInputsText = $("#job-inputs-text").text();
+        restorableInputs = JSON.parse(jobInputsText);
+    }
+
+    // Build current form data for inputs upon loading of edit modal
+    var buildInputsForm = function() {
+        updateRestorableInputs();
+        clearCurrentInputs();
+        proposedInputs = restorableInputs;
+        // for input in proposed input add an element
+        for (const property in proposedInputs) {
+            let val = proposedInputs[property];
+
+            // Transform objects to a string 
+            if (typeof val === 'object' && val !== null) {
+                val = JSON.stringify(val);
+            }
+            addInputToForm(property, val);
+        }
+    }
+
+    // Add a pre-populated input to the input form
+    var addInputToForm = function(k, v) {
+        var inputKeyId = "job-input-key" + k.trim();
+        var inputValueId = "job-input-value-" + k.trim();
+        var inputElements = '<div class="edit-input-new"><label>Input: </label><input id=' + inputKeyId + ' class="edit-input-new-key" style=""margin-left: 8px; padding-left: 8px;" type="text"><label style="margin-left: 16px;">Value: </label><input id=' + inputValueId + ' class="edit-input-new-val" style="margin-left: 8px; padding-left: 8px;" type="text"><i class="material-icons" style="cursor: pointer;" onclick="removeEditInput(this)">delete</i></div>';
+        
+        $("#edit-input-container").append(inputElements);
+
+        $("#" + inputKeyId).val(k);
+        $("#" + inputValueId).val(v);
+    }
+
+    // Clear the current inputs in the form
+    var clearCurrentInputs = function() {
+        $("#edit-input-container").empty();
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            closeModal();
+        }
+    }
+
+    // Close the modal function
+    var closeModal = function() {
+        modal.style.display = "none";
+    }
+
+    // Open the modal function
+    var showModal = function() {
+        buildInputsForm();
+        modal.style.display = "block";
+    }
+
+</script>
