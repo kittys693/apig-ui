@@ -1,0 +1,62 @@
+<div class="card-body">
+
+    <!-- Parent job reference -->
+    <div ng-if="hasUpstreamJob()">
+        <h5 class="card-title">Parent Job</h5>
+        <h6 class="text-muted"><small>This job belongs to a conductor</small></h6>
+        <strong><a href="/jobs/{[{ jidData['data']['apig-payload']['inputs']['upstream_jid'] }]}">{[{ jidData['data']['apig-payload']['inputs']['upstream_jid'] }]}</a></strong>
+    </div>
+
+    <div style="margin-top: 24px;" ng-if="hasChildrenJobs()">
+        <h5 class="card-title">Children Jobs <span class="badge badge-secondary">{[{ childrenJobsStatusMap['total'] }]}</span></h5>
+        <h6 class="text-muted"><small>This job is a conductor</small></h6>
+        <p><strong>{[{ getChildrenJobTypeStyles('jobCompletion') }]} complete</strong></p>
+
+        <div style="margin-bottom: 24px;" class="progress">
+            <div class="progress-bar bg-success" role="progressbar" ng-style="getChildrenJobTypeStyles('completed')"></div>
+            <div class="progress-bar bg-warning" role="progressbar" ng-style="getChildrenJobTypeStyles('waiting')"></div>
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" role="progressbar" ng-style="getChildrenJobTypeStyles('ready')"></div>
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" role="progressbar" ng-style="getChildrenJobTypeStyles('running')"></div>
+            <div class="progress-bar bg-danger" role="progressbar" ng-style="getChildrenJobTypeStyles('failed')"></div>
+        </div>
+
+        <ul class="list-group list-group-flush" id="job-children-jobs-unordered-list-container">
+            <li class="job-list-item list-group-item" ng-repeat="(job_name, job_value) in jidData['data']['children_jobs']" id="child-job-{[{ $index }]}" onclick="toggleCollapse(this.id)">
+                <p style="margin-bottom: 0px; padding-bottom: 0px;"><strong>{[{ job_name }]}</strong>
+                    <span class="badge badge-success" style="float: right; margin-right: 8px;" ng-if="job_value.status == 'completed'"> {[{ job_value.status }]}</span>
+                    <span class="badge badge-warning" style="float: right; margin-right: 8px;" ng-if="job_value.status == 'waiting'"> {[{ job_value.status }]}</span>
+                    <span class="badge badge-info" style="float: right; margin-right: 8px;" ng-if="job_value.status == 'running'"> {[{ job_value.status }]}</span>
+                    <span class="badge badge-primary" style="float: right; margin-right: 8px;" ng-if="job_value.status == 'ready'"> {[{ job_value.status }]}</span>
+                    <span class="badge badge-danger" style="float: right; margin-right: 8px;" ng-if="childJobFailureStatusList.indexOf(job_value.status) > -1"> {[{ job_value.status }]}</span>
+                </p>
+
+                <div class="job-child-job-container">
+                    <div class="child-job-info-wrapper">
+                        <p><a href="/jobs/{[{ job_value.jid }]}">{[{ job_value.jid }]}</a></p>
+                        <p>Started: <span>{[{ job_value.begin_wait_time }]}</span></p>
+                    </div>
+                </div>
+
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script>
+
+    // Start collapse logic
+    function toggleCollapse(id) {
+        var idName = "#" + id;
+
+        var growDiv = $(idName).find(".job-child-job-container")[0];
+        var wrapper = $(idName).find("div .child-job-info-wrapper")[0];
+
+        console.log(growDiv.style.height);
+        if (growDiv.style.height == "auto") {
+            growDiv.style.height = 0;
+        } else {
+            growDiv.style.height = "auto";
+        }
+    }
+    // End collapse logic
+</script>
