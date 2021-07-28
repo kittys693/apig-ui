@@ -1,0 +1,8 @@
+<div class="card-body">
+    <h5 class="card-title">Active Constraints</h5>
+    <div ng-repeat="(key,value) in jidData['constraints']">
+        <h6 class="text-primary job-constraint-title">{[{ key }]}</h6>
+        <pre class="code"><code>{[{ value | json }]}</code></pre>
+        <hr>
+    </div>
+</div>
