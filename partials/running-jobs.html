@@ -1,0 +1,15 @@
+<div class="card-body">
+    <h5 class="card-title">Active Jobs <span class="badge badge-secondary">{[{ runningJobSearchResults.information.number }]}</span></h5>
+    <div>
+        <div ng-if="runningJobSearchResults.information.number > 0" class="list-group">
+            <a ng-repeat="job in runningJobSearchResults.information.jobs" href="/jobs/{[{ job.apig_jid }]}" class="list-group-item list-group-item-action"><strong>{[{ job.apig_jid }]}</strong></a>
+        </div>
+
+        <div ng-if="!runningJobSearchResults.information.number > 0">
+            <p>It's quite... no jobs</p>
+        </div>
+
+    </div>
+
+</div>
+  
