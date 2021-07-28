@@ -1,0 +1,129 @@
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="apig-jobs-app" ng-controller="apig-jobs-controller">
+
+  <head>
+    <title>{{ jid }} | Clockwise</title>
+    <link rel="shortcut icon" href="{{ url_for('static',filename='favicon.ico') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+
+  <body id="main_body">
+    <!-- Panel: Navbar -->
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="/">API Gateway Administration <br> <em>{{ hpUser['name'] }}</em></a><br>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
+    <span style="display: none;" id="mJid">{{ jid }}</span>
+
+    <div ng-if="isValidJob()" class="main">
+
+      <!-- PRIMARY JID INFORMATION -->
+      <div class="flex-container flex-container-sm">
+
+        <div id="job-summary">
+          <h1 style="text-transform: uppercase;" class="card-title"><a href="/microfunctions/{[{ jidData['data']['microfunction'] }]}">{[{ jidData['data']['microfunction'] }]}</a></h1>
+          <h4 class="card-subtitle text-muted apig-job-subtitle">{{ jid }}</h4>
+          <h6 style="padding-top: 16px;" class="text-muted">
+              <span style="margin-left:0px;" class="apig-jobs-status text-success" ng-if="jidData['data']['status'] == 'successful'"><strong>{[{ jidData['data']['status'] }]}</strong></span>
+              <span style="margin-left:0px;" class="apig-jobs-status text-info" ng-if="jidData['data']['status'] == 'started'"><strong>{[{ jidData['data']['status'] }]}</strong></span>
+              <span style="margin-left:0px;" class="apig-jobs-status text-primary" ng-if="jidData['data']['status'] == 'pending'"><strong>{[{ jidData['data']['status'] }]}</strong></span>
+              <span style="margin-left:0px;" class="apig-jobs-status text-danger" ng-if="jidData['data']['status'] == 'failed'"><strong>{[{ jidData['data']['status'] }]}</strong></span>
+              <span style="margin-left:0px;" class="apig-jobs-status text-danger" ng-if="jidData['data']['status'] == 'orphaned'"><strong>{[{ jidData['data']['status'] }]}</strong></span>
+              <span style="margin-left:0px;" class="apig-jobs-status text-warning" ng-if="jidData['data']['status'] == 'terminated'"><strong>{[{ jidData['data']['status'] }]}</strong></span>
+          </h6>
+        </div>
+
+        <div id="job-actions">
+          <ng-include src="'/static/partials/job-actions.html'"></ng-include>
+        </div>
+
+      </div>
+
+      <!-- Holds inputs, timeline, constraints -->
+      <div class="flex-container flex-container-sm" id="job-flex-container">
+
+        <div class="flex-container flex-container-sm" id="job-container-left">
+
+          <div class="card job-card" id="job-children-jobs" ng-if="hasUpstreamJob() || hasChildrenJobs()">
+            <ng-include src="'/static/partials/job-children-jobs.html'"></ng-include>
+          </div>
+
+          <div class="card job-card" id="job-inputs">
+            <ng-include src="'/static/partials/job-inputs.html'"></ng-include>
+          </div>
+
+          <div class="card job-card" id="job-approvals" ng-if="isPending() && hasApprovalConstraint()">
+            <ng-include src="'/static/partials/job-approvals.html'"></ng-include>
+          </div>
+
+          <div class="card job-card" id="job-constraints" ng-if="isPending()">
+            <ng-include src="'/static/partials/job-constraints.html'"></ng-include>
+          </div>
+          
+          <div class="card job-card" id="job-results" ng-if="jidData.data.build_params || isCurrentlyFailed() || jidData.data.downstream_response">
+            <ng-include src="'/static/partials/job-results.html'"></ng-include>
+          </div>
+
+          <!-- Notes section -->
+
+        </div>
+
+        <div class="flex-container flex-container-sm" id="job-container-right">
+
+          <!-- Owners and Email Button -->
+          <div class="card job-card" id="job-owners">
+            <ng-include src="'/static/partials/job-owners.html'"></ng-include>
+          </div>
+
+          <div class="card job-card" ng-if="!isPending() && !isRunning()" id="job-duration">
+            <ng-include src="'/static/partials/job-duration.html'"></ng-include>
+          </div>
+
+          <div class="card job-card" ng-if="jidData.data.build_params || jidData.data.registeredVars" id="job-outputs">
+            <ng-include src="'/static/partials/job-outputs.html'"></ng-include>
+          </div>
+
+          <div class="card job-card" id="job-timeline">
+            <ng-include src="'/static/partials/job-timeline.html'"></ng-include>
+          </div>
+
+        </div>
+        
+
+      </div>
+
+    </div>
+
+    <div ng-if="!isValidJob()" class="main">
+      <!-- Panel: Oops - job is not active -->
+        <div class="flex-container">
+          <div class="card" id="job-oops">
+            <div class="alert alert-warning" role="alert">
+              CANNOT FIND JOB
+            </div>
+          </div>
+        </div>
+
+    </div>
+
+    <!-- Load jquery v3.4.1 -->
+    <script src="{{ url_for('static',filename='js/jquery.js') }}"></script>
+
+
+    <!-- Load AngularJS v1.6.9 -->
+    <script src="{{ url_for('static',filename='js/angular169.min.js') }}"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/bootstrap431.min.css') }}">
+
+
+    <!-- Load custom application JS -->
+    <script src="{{ url_for('static',filename='js/jobs.js') }}"></script>
+
+    <!-- Load the angular stuff that allows collapsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.0/ui-bootstrap.js"></script>
+  </body>
+
+</html>
