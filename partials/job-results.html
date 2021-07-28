@@ -1,0 +1,17 @@
+<div class="card-body">
+    <h5 class="card-title">Service Response</h5>
+
+    <!-- Failures Results -->
+    <div ng-if="isCurrentlyFailed()">
+        <h6>Latest Failure Results</h6>
+        <pre class="code"><code>{[{ jidData.data.failuresResults | json }]}</code></pre>
+    </div>
+
+    <!-- Downstream Response -->
+    <div ng-if="jidData.data.downstream_response">
+        <h6>Downstream Response</h6>
+        <pre id="job-downstream-response" class="code"><code>{[{ jidData.data.downstream_response | json }]}</code></pre>
+    </div>
+
+
+</div>
