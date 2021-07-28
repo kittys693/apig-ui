@@ -1,0 +1,129 @@
+<!-- The Modal -->
+<div id="editModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content-non-bs">
+
+        <div class="card-body">
+            <h5 class="card-title">Edit Job</h5>
+            <h6 class="card-subtitle text-muted">{[{ selectedJob.jid }]}</h6>
+            <p><strong>Method</strong></p>
+            <input type="text" id="methodEditBody" class="form-control code" value="{[{ queue.response[selectedJob.jid]['method'] }]}">
+
+            <p><strong>Request</strong></p>
+            <pre
+                class="code"><code>{[{ queue.response[selectedJob.jid]['path'] }]}</code></pre>
+
+            <p><strong>Headers</strong></p>
+            <p><samp>Unavailable</samp></p>
+
+            <div style="margin-bottom: 24px;" class="form-group">
+                <p><strong>Parameters</strong></p>
+                <div id="edit-uriargs-container">
+                    <div style="margin-bottom: 12px" ng-repeat="(key, val) in queue.response[selectedJob.jid]['uriArgs']">
+                        <label class="edit-uriargs-key" style="padding: 0.5em;" for="{[{ key }]}"><strong><em>{[{ key }]}</em></strong></label><i class="material-icons" onclick="removeUriArgsInput(this)" style="cursor: pointer;">delete</i>
+                        <input type="text" id="{[{ key }]}" class="form-control edit-uriargs-val" value="{[{ val }]}">
+                    </div>
+                </div> 
+            </div>
+
+            <span id="edit-add-uriargs-btn" class="btn btn-primary" style="width: 100%; margin-bottom: 24px;">Add Parameter</span>
+
+            <div style="margin-bottom: 24px;" class="form-group">
+                    <p><strong>Edit Inputs</strong></p>
+                    <div id="edit-input-container">
+                        <div style="margin-bottom: 12px" ng-repeat="(key, val) in queue.response[selectedJob.jid]['body']['inputs']">
+                            <label class="edit-input-key" style="padding: 0.5em;" for="{[{ key }]}"><strong><em>{[{ key }]}</em></strong></label><i class="material-icons" onclick="removeEditInput(this)" style="cursor: pointer;">delete</i>
+                            <input type="text" id="{[{ key }]}" class="form-control edit-input-val" value="{[{ val }]}">
+                        </div>
+                    </div> 
+            </div>
+
+            <span id="edit-add-input-btn" class="btn btn-primary" style="width: 100%; margin-bottom: 24px;">Add Input</span>
+
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="edit-pause">
+                <label class="form-check-label" for="edit-pause">Pause Constraint</label>
+            </div>
+
+            <button type="button" class="btn btn-secondary" id="closeEditModalBtn">Close</button>
+            <button type="button" class="btn btn-primary" id="saveEditModalBtn" ng-click="editJobSbmt(selectedJob.jid)">Save changes</button>
+        </div>
+            
+    </div>
+
+</div>
+
+
+<script>
+    var dummyData = '{"hello-fraunchless-20191115-183500-8289": {"body": {"inputs": {"foo": "bar"}}, "constraints": {},"method": "POST", "path": "https://kong-sandbox.healthpartners.com/hello-fraunchless/", "submitTime": "11/15/2019,18:35:00", "uriArgs": {}}, "hello-fraunchless-20191115-183637-8039": {"body": {"inputs": {"baz": "zap", "c": 23,"d": {"e": "f"}, "seven": [{"1": "2"}, {"a": "b"}]}}, "constraints": {}, "method": "POST", "path": "https://kong-sandbox.healthpartners.com/hello-fraunchless/", "submitTime": "11/15/2019, 18:36:37", "uriArgs": {}}}';
+    var q = JSON.parse(dummyData);
+
+    // Get the modal
+    var modal = document.getElementById("editModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("editBtn");
+
+    // Get the button that closes the modal
+    var closeEditModalBtn = document.getElementById("closeEditModalBtn");
+
+    // Get the button that saves the modal
+    var saveEditModalBtn = document.getElementById("saveEditModalBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    $("#edit-add-input-btn").click(function() {
+
+
+    var newInputContainer = $('<div class="edit-input-new"><label>Input: </label><input class="edit-input-new-key" style="padding-left: 8px;" type="text" placeholder="Input key"><label style="margin-left: 16px;">Value: </label><input class="edit-input-new-val" style="padding-left: 8px;" type="text" placeholder="Input value"><i class="material-icons" style="cursor: pointer;" onclick="removeEditInput(this)">delete</i></div>');
+
+    $("#edit-input-container").append(newInputContainer);
+    })
+
+    $("#edit-add-uriargs-btn").click(function() {
+
+
+    var newInputContainer = $('<div class="edit-uriargs-new"><label>Parameter: </label><input class="edit-uriargs-new-key" style="padding-left: 8px;" type="text" placeholder="Parameter key"><label style="margin-left: 16px;">Value: </label><input class="edit-uriargs-new-val" style="padding-left: 8px;" type="text" placeholder="Parameter value"><i class="material-icons" style="cursor: pointer;" onclick="removeUriArgsInput(this)">delete</i></div>');
+
+    $("#edit-uriargs-container").append(newInputContainer);
+    })
+
+
+    // When the user clicks the button, open the modal 
+    btn.onclick = function () {
+        showModal();
+    }
+    var removeEditInput = function(el) {
+        $(el).parent().remove();
+    }
+    var removeUriArgsInput = function(el) {
+        $(el).parent().remove();
+    }
+    closeEditModalBtn.onclick = function() {
+        closeModal();
+    }
+
+    saveEditModalBtn.onclick = function() {
+        closeModal();
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            closeModal();
+        }
+    }
+
+    // Close the modal function
+    var closeModal = function() {
+        modal.style.display = "none";
+    }
+
+    // Close the modal function
+    var showModal = function() {
+    modal.style.display = "block";
+    }
+
+</script>
