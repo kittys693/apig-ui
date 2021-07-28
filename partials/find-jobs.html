@@ -1,0 +1,49 @@
+<div class="card-body">
+    <h5 class="card-title">Find Jobs</h5>
+    <span>
+        <form class="form-inline">
+            <div class="form-group mb-2">
+                <select class="form-control" name="filter-time" id="filter-time">
+                    <option value="1">Today</option>
+                    <option value="2">Last 24 hours</option>
+                    <option value="7">Last 7 days</option>
+                    <option value="28">Last 28 days</option>
+                    <option value="90">Last 90 days</option>
+                </select>
+            </div>
+
+            <div class="form-group mx-sm-3 mb-2">
+                <select class="form-control" name="filter-status" id="filter-status">
+                    <option value="successful">Successful</option>
+                    <option value="failed">Failed</option>
+                    <option value="started">Started</option>
+                    <option value="orphaned">Orphaned</option>
+                    <option value="terminated">Terminated</option>
+                    <option value="pending">Pending</option>
+                </select>
+            </div>
+
+            <div class="form-group mx-sm-3 mb-2">
+                <input type="text" class="form-control" id="filter-name" placeholder="Name contains...">
+            </div>
+
+            <button ng-if="canShowJobSearchButton.active" ng-click="searchForJobs()" type="submit" class="btn btn-dark mb-2">Search</button>
+        </form>
+
+    </span>
+
+    <div>
+        <p ng-if="canShowJobSearchButton.active">{[{ jobSearchResults.information.number }]} jobs found</p>
+
+        <div ng-if="jobSearchResults.information.number > 0" class="list-group">
+            <a ng-repeat="job in jobSearchResults.information.jobs" href="/jobs/{[{ job.apig_jid }]}" class="list-group-item list-group-item-action"><strong>{[{ job.apig_jid }]}</strong></a>
+        </div>
+
+        <div ng-if="!canShowJobSearchButton.active" class="spinner-border text-primary" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+
+    </div>
+
+</div>
+  
