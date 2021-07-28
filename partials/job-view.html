@@ -1,0 +1,72 @@
+<div class="card-body">
+
+  <!-- Details of currently selected job -->
+  <div ng-if="selectedJob.active == true">
+    <h5 class="card-title">Job Information</h5>
+    <h6 style="margin-bottom: 16px;" class="card-subtitle text-muted"><a href="/jobs/{[{ selectedJob.jid }]}">{[{ selectedJob.jid }]}</a><span style="float: right;"><a href="/jobs/{[{ selectedJob.jid }]}" type="button" class="btn btn-dark" style="margin-right: 8px;">MANAGE</a></span></h6>
+
+    <h6 style="margin-top: 8px;">Quick Actions</h6>
+    <ng-include src="'/static/partials/view-buttons.html'"></ng-include>
+
+    <h6 style="margin-top: 8px;">Micro Function</h6>
+    <p><a href="/microfunctions/{[{ queue.response[selectedJob.jid]['microfunction'] }]}">{[{ queue.response[selectedJob.jid]['microfunction'] }]}</a></p>
+
+    <h6 style="margin-top: 8px;">Request</h6>
+    <p><samp>{[{ queue.response[selectedJob.jid]['method'] }]} {[{ queue.response[selectedJob.jid]['path'] }]}</samp>
+    </p>
+
+    <h6 style="margin-top: 8px;">Inputs</h6>
+    <pre class="code"><code>{[{ queue.response[selectedJob.jid]['body']['inputs'] | json }]}</code></pre>
+
+    <h6 style="margin-top: 8px;">Active Constraints</h6>
+    <ul class="list-group list-group-flush">
+      <li style="padding-left: 0px;" onclick="toggleConstraintInformation(this.id)" id="jobview-constraints-{[{ $index }]}" ng-repeat="(key, value) in queue.response[selectedJob.jid]['constraints']" class="job-list-item list-group-item">
+        <p class="apig-jobview-constraint-title">
+            <small>{[{ key }]} Constraint</small>
+        </p>
+
+        <!-- This part collapses -->
+        <div class="job-child-job-container">
+          <div class="child-job-info-wrapper">
+            <pre class="code"><code>{[{ value | json }]}</code></pre>
+          </div>
+        </div>
+
+
+      </li>
+    </ul>
+
+    <h6 style="margin-top: 8px;">Owners</h6>
+    <ul>
+      <li ng-repeat="owner in queue.response[selectedJob.jid]['owners']"><a href="mailto:{[{ owner }]}">{[{ owner }]}</a></li>
+    </ul>
+
+    <ng-include src="'/static/partials/edit-modal.html'"></ng-include>
+  </div>
+
+  <!-- No job currently selected -->
+  <div ng-if="selectedJob.active == false">
+    <h5 class="card-title">Job Information</h5>
+    <h6 class="card-subtitle text-muted">Select a job to view details</h6>
+  </div>
+
+</div>
+
+<script>
+
+    // Start collapse logic
+    function toggleConstraintInformation(id) {
+        var idName = "#" + id;
+
+        var growDiv = $(idName).find(".job-child-job-container")[0];
+        var wrapper = $(idName).find("div .child-job-info-wrapper")[0];
+
+        console.log(growDiv.style.height);
+        if (growDiv.style.height == "auto") {
+            growDiv.style.height = 0;
+        } else {
+            growDiv.style.height = "auto";
+        }
+    }
+    // End collapse logic
+</script>
