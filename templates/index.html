@@ -1,0 +1,69 @@
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="apig-app" ng-controller="apig-controller">
+  <head>
+    <title>{[{ title.value }]}</title>
+    <link rel="shortcut icon" href="{{ url_for('static',filename='favicon.ico') }}">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/style.css') }}">
+  </head>
+
+  <body id="main_body">
+
+    <!-- Panel: Navbar -->
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="/">API Gateway Administration <br> <em>{{ hpUser['name'] }}</em></a><br>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
+
+    <div class="main">
+
+      <ng-include src="'/static/partials/processing.html'"></ng-include>
+
+      <!-- Panel: Find Jobs and Running Jobs List -->
+      <div class="queue-panel-container flex-container">
+
+        <div class="card" id="running-jobs-card">
+          <ng-include src="'/static/partials/running-jobs.html'"></ng-include>
+        </div>
+
+        <div class="card" id="find-jobs-card">
+          <ng-include src="'/static/partials/find-jobs.html'"></ng-include>
+        </div>
+
+      </div>
+
+      <!-- Panel: Review Mode List -->
+      <div class="queue-panel-container flex-container">
+        <div class="card" id="review-mode-list-card">
+          <ng-include src="'/static/partials/review-mode-list.html'"></ng-include>
+        </div>
+      </div>
+
+      <!-- Panel: Job Information -->
+      <div class="job-view-container flex-container">
+        <div class="card" id="joblist-card">
+          <ng-include src="'/static/partials/joblist.html'"></ng-include>
+        </div>
+        <div class="card" id="jobview-card">
+          <ng-include src="'/static/partials/jobview.html'"></ng-include>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Load jquery v3.4.1 -->
+    <script src="{{ url_for('static',filename='js/jquery.js') }}"></script>
+
+
+    <!-- Load AngularJS v1.6.9 -->
+    <script src="{{ url_for('static',filename='js/angular169.min.js') }}"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/bootstrap431.min.css') }}">
+  
+
+    <!-- Load custom application JS -->
+    <script src="{{ url_for('static',filename='js/app.js') }}"></script>
+	</body>
+</html>
