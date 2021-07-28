@@ -1,0 +1,14 @@
+<div class="card-body">
+    <h5 class="card-title">Timeline</h5>
+
+    <div id="job-timeline-box">
+        <div ng-repeat="event in jidData.data.timeline">
+            <p style="margin-bottom: 0px; padding-bottom: 0px;"><strong>{[{ event.time }]}</strong><span style="float: right;">   <em style="margin-right: 8px;">{[{ event.status }]}</em></span></p>
+            <p> {[{ event.event }]}</p>
+        </div>
+    </div>
+
+    <div ng-if="!jidData.data.timeline">
+        <p>Nothing Found</p>
+    </div>
+</div>
