@@ -1,0 +1,38 @@
+<div id="job-summary-container">
+    <div style="padding-top: 8px; float: right;" ng-if="isPending() && hasConstraints()">
+        <h6 class="text-muted">
+            <span style="margin-left:0px; margin-right: 8px;" class="job-badge badge badge-warning apig-jobs-constraint-badge" ng-repeat="(constraintKey, constraintVal) in jidData['constraints']">{[{ constraintKey }]}</span>
+        </h6>
+    </div>
+
+    <div style="padding-top: 8px; float: right;">
+        <h6 class="text-muted">
+            <!-- RESUBMIT -->
+            <span ng-if="canResubmit()">
+                <button type="button" id="mark-complete-button" class="btn btn-muted"><small>MARK AS COMPLETE</small></button>
+                <button type="button" id="resubmit-job-button" class="btn btn-primary"><small>RESUBMIT</small></button>
+            </span>
+
+            <!-- PENDING -->
+            <span ng-if="isPending()">
+
+                <!-- HAS APPROVAL CONSTRAINT -->
+                <span ng-if="jidData['constraints']['approval']">
+                    <button type="button" class="btn btn-success " ng-click="approveJob()"><small>APPROVE</small></button>
+                </span>
+
+                <!-- PAUSE CONSTRAINT -->
+                <button type="button" class="btn btn-warning " ng-if="!jidData['constraints']['pause']" ng-click="pauseJid(jidData.jid)"><small>PAUSE</small></button>
+                <button type="button" class="btn btn-info " ng-if="jidData['constraints']['pause']" ng-click="resumeJid(jidData.jid)"><small>UNPAUSE</small></button>
+
+            </span>
+
+            <!-- TERMINATE -->
+            <button type="button" class="btn btn-danger " ng-if="canTerminate()" ng-click="removeJid(jidData.jid)"><small>TERMINATE</small></button>
+        </h6>
+
+    </div>
+</div>
+<ng-include ng-if="canEdit()" src="'/static/partials/job-edit.html'"></ng-include>
+<ng-include ng-if="canResubmit()" src="'/static/partials/confirm-resubmit.html'"></ng-include>
+<ng-include ng-if="canResubmit()" src="'/static/partials/confirm-mark-as-complete.html'"></ng-include>
