@@ -1,0 +1,5 @@
+<button type="button" class="btn btn-success btn-sm" ng-if="queue.response[selectedJob.jid]['constraints']['approval']" ng-click="approveJob(selectedJob.jid)">Approve</button>
+<button type="button" class="btn btn-danger btn-sm" ng-if="queue.response[selectedJob.jid]['constraints']['approval']" ng-click="removeJid(selectedJob.jid)">Deny</button>
+<button type="button" class="btn btn-warning btn-sm" ng-if="!queue.response[selectedJob.jid]['constraints']['pause']" ng-click="pauseJid(selectedJob.jid)">Pause</button>
+<button type="button" class="btn btn-info btn-sm" ng-if="queue.response[selectedJob.jid]['constraints']['pause']" ng-click="resumeJid(selectedJob.jid)">Unpause</button>
+<button type="button" class="btn btn-danger btn-sm" ng-if="!queue.response[selectedJob.jid]['constraints']['approval']" ng-click="removeJid(selectedJob.jid)">Delete</button>
