@@ -1,0 +1,77 @@
+<!-- The Modal -->
+<div id="resubmitModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content-non-bs">
+
+        <div class="card-body">
+            <h5 class="card-title">Resubmit {[{ jidData.jid }]}</h5>
+            <h6 class="card-subtitle text-muted">Provide basic authorization to continue</h6>
+
+            <form style="margin-top: 24px;">
+                <div class="form-group">
+                    <label for="resubmit-username-entry">Username</label>
+                    <input type="text" class="form-control" id="resubmit-username-entry" placeholder="Enter username" required>
+                </div>
+                <div class="form-group">
+                    <label for="resubmit-password-entry">Password</label>
+                    <input type="password" class="form-control" id="resubmit-password-entry" placeholder="Enter password" required>
+                </div>
+            </form>
+
+            <button type="submit" class="btn btn-success" id="saveResubmitModalBtn" ng-click="resubmitJob()">Submit</button>
+            <button type="button" class="btn btn-secondary" id="closeResubmitModalBtn">Cancel</button>
+        </div>
+            
+    </div>
+
+</div>
+
+
+<script>
+    // Get the modal
+    var confirmResubmitModal = document.getElementById("resubmitModal");
+
+    // Get the button that opens the modal
+    var confirmResubmitBtn = document.getElementById("resubmit-job-button");
+
+    // Get the button that closes the modal
+    var closeResubmitModalBtn = document.getElementById("closeResubmitModalBtn");
+
+    // Get the button that saves the modal
+    var saveResubmitModalBtn = document.getElementById("saveResubmitModalBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal 
+    confirmResubmitBtn.onclick = function () {
+        showConfirmResubmitModal();
+    }
+
+    closeResubmitModalBtn.onclick = function() {
+        closeConfirmResubmitModal();
+    }
+
+    saveResubmitModalBtn.onclick = function() {
+        closeConfirmResubmitModal();
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == confirmResubmitModal) {
+            closeConfirmResubmitModal();
+        }
+    }
+
+    // Close the modal function
+    var closeConfirmResubmitModal = function() {
+        confirmResubmitModal.style.display = "none";
+    }
+
+    // Open the modal function
+    var showConfirmResubmitModal = function() {
+        confirmResubmitModal.style.display = "block";
+    }
+
+</script>
