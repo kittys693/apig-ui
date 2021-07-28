@@ -1,0 +1,66 @@
+<div class="card-body">
+    <h5 class="card-title">Outputs</h5>
+
+    <!-- Build Params -->
+    <div ng-if="jidData.data.build_params">
+        <h6>Build Parameters</h6>
+        <ul class="list-group list-group-flush">
+            <li onclick="toggleCollapse(this.id)" id="job-buildparam-output-{[{ $index }]}" style="padding-left: 0px;" class="job-list-item list-group-item" ng-repeat="(outputKey, outputValue) in jidData['data']['build_params']">
+                <p style="margin-bottom: 0px; padding-bottom: 0px;"><strong>{[{ outputKey }]}</strong></p>
+                <div class="job-child-job-container">
+                    <div class="child-job-info-wrapper">
+                        <p> {[{ outputValue }]}</p>
+                    </div>
+                </div>
+
+
+            </li>
+        </ul>
+    </div>
+
+
+    <!-- Registered Vars -->
+    <div ng-if="jidData.data.registeredVars">
+        <h6>Registered Variables</h6>
+
+        <div ng-repeat="(host, vals) in jidData['data']['registeredVars']">
+            <p style="text-align: center; text-decoration: underline;"><strong>{[{ host }]}</strong></p>
+            <ul class="list-group list-group-flush">
+                <li onclick="toggleCollapse(this.id)" id="job-registeredvar-output-{[{ $index }]}" style="padding-left: 0px;" class="job-list-item list-group-item" ng-repeat="(rOutputKey, rOutputValue) in vals">
+                    <p style="margin-bottom: 0px; padding-bottom: 0px;"><strong>{[{ rOutputKey }]}</strong></p>
+
+                    <!-- This part collapses -->
+                    <div class="job-child-job-container">
+                        <div class="child-job-info-wrapper">
+                            <p> {[{ rOutputValue }]}</p>
+                        </div>
+                    </div>
+
+
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+
+</div>
+<script>
+
+    // Start collapse logic
+    function toggleJobOutputCollapse(id) {
+        console.log(id);
+        var idName = "#" + id;
+
+        var growDiv = $(idName).find(".job-child-job-container")[0];
+        var wrapper = $(idName).find("div .child-job-info-wrapper")[0];
+
+        console.log(growDiv.style.height);
+        if (growDiv.style.height == "auto") {
+            growDiv.style.height = 0;
+        } else {
+            growDiv.style.height = "auto";
+        }
+    }
+    // End collapse logic
+</script>
