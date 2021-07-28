@@ -1,0 +1,106 @@
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="apig-microfunction-app" ng-controller="apig-microfunctions-controller">
+
+  <head>
+    <title>{[{  microfunctionData.microfunction }]} | Clockwise</title>
+    <link rel="shortcut icon" href="{{ url_for('static',filename='favicon.ico') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+
+  <body id="main_body">
+    <!-- Panel: Navbar -->
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="/">API Gateway Administration <br> <em>{{ hpUser['name'] }}</em></a><br>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
+    <span style="display: none;" id="mMicrofunction">{{ microfunction }}</span>
+    <span style="display: none;" id="mEmail">{{ hpUser['email'] }}</span>
+
+    <div ng-if="isValidMicrofunction()" class="main">
+
+      <!-- PRIMARY JID INFORMATION -->
+      <div class="flex-container flex-container-sm">
+
+        <div id="microfunction-summary">
+          <h1 style="text-transform: uppercase;" class="card-title">{[{ microfunctionData.data.meta.pretty_name }]}</h1>
+          <h4 class="card-subtitle text-muted apig-job-subtitle">{[{ microfunctionData.data.meta.description }]}</h4>
+          <h6 style="padding-top: 16px;" class="text-muted">
+            <span ng-if="microfunctionData.isOwner" style="margin-left:0px;" class="apig-jobs-status text-primary"><strong>OWNER</strong></span>
+            <span ng-if="!microfunctionData.isOwner" style="margin-left:0px;" class="apig-jobs-status text-warning"><strong>VISITOR</strong></span>
+            <span ng-if="microfunctionData.isOwner" class="badge badge-info" style="float: right; margin-right: 8px;">FULL PERMISSIONS</span>
+            <span ng-if="!microfunctionData.isOwner" class="badge badge-info" style="float: right; margin-right: 8px;">READ-ONLY PERMISSIONS</span>
+          </h6>
+        </div>
+
+      </div>
+
+      <!-- Holds inputs, timeline, constraints -->
+      <div class="flex-container flex-container-sm" id="job-flex-container">
+
+        <div class="flex-container flex-container-sm" id="job-container-left">
+
+          <div class="card job-card" id="mf-downstream-information">
+            <ng-include src="'/static/partials/microfunction/mf-downstream-information.html'"></ng-include>
+          </div>
+
+          <div class="card job-card" id="mf-analytics">
+            <ng-include src="'/static/partials/microfunction/mf-analytics.html'"></ng-include>
+          </div>
+
+        </div>
+
+        <div class="flex-container flex-container-sm" id="job-container-right">
+
+          <!-- Owners and Email Button -->
+          <div class="card job-card" id="mf-owners">
+            <ng-include src="'/static/partials/microfunction/mf-owners.html'"></ng-include>
+          </div>
+
+          <div class="card job-card" id="mf-active-jobs">
+            <ng-include src="'/static/partials/microfunction/mf-actives.html'"></ng-include>
+          </div>
+
+          <div class="card job-card" id="mf-inputs">
+            <ng-include src="'/static/partials/microfunction/mf-inputs.html'"></ng-include>
+          </div>
+
+        </div>
+        
+
+      </div>
+
+    </div>
+
+    <div ng-if="!isValidMicrofunction()" class="main">
+      <!-- Panel: Oops - job is not active -->
+        <div class="flex-container">
+          <div class="card" id="job-oops">
+            <div class="alert alert-warning" role="alert">
+              NO META DATA FOUND
+            </div>
+          </div>
+        </div>
+
+    </div>
+
+    <!-- Load jquery v3.4.1 -->
+    <script src="{{ url_for('static',filename='js/jquery.js') }}"></script>
+
+
+    <!-- Load AngularJS v1.6.9 -->
+    <script src="{{ url_for('static',filename='js/angular169.min.js') }}"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/bootstrap431.min.css') }}">
+
+
+    <!-- Load custom application JS -->
+    <script src="{{ url_for('static',filename='js/microfunctions.js') }}"></script>
+
+    <!-- Load the angular stuff that allows collapsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.0/ui-bootstrap.js"></script>
+  </body>
+
+</html>
