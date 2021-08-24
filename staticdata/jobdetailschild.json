@@ -1,0 +1,180 @@
+{
+    "apig-payload": {
+        "inputs": {
+            "upstream_jid": "unix-server-pretirement-20210820-060326-9729",
+            "vmname": "ld0007"
+        }
+    },
+    "apig_jid": "unix-shutdown-20210820-060853-8871",
+    "apig_server": "kong.healthpartners.com",
+    "constraints": [],
+    "couchBaseRecordUuid": "c7df6032-3a0a-40b5-a366-4208611b0f87",
+    "downstream_response": {
+        "allow_simultaneous": true,
+        "artifacts": {},
+        "controller_node": "",
+        "created": "2021-08-20T06:10:16.258499Z",
+        "description": "Shut down a unix server",
+        "diff_mode": false,
+        "elapsed": 0.0,
+        "event_processing_finished": false,
+        "execution_node": "",
+        "extra_vars": "{\"vmname\": \"ld0007\", \"upstream_jid\": \"unix-server-pretirement-20210820-060326-9729\", \"apig_jid\": \"unix-shutdown-20210820-060853-8871\", \"apig_host\": \"kong.healthpartners.com\"}",
+        "failed": false,
+        "finished": null,
+        "force_handlers": false,
+        "forks": 0,
+        "id": 23085,
+        "ignored_fields": {},
+        "instance_group": null,
+        "inventory": 28,
+        "job": 23085,
+        "job_args": "",
+        "job_cwd": "",
+        "job_env": {},
+        "job_explanation": "",
+        "job_slice_count": 1,
+        "job_slice_number": 0,
+        "job_tags": "",
+        "job_template": 102,
+        "job_type": "run",
+        "launch_type": "manual",
+        "limit": "",
+        "modified": "2021-08-20T06:10:16.303513Z",
+        "name": "unix_shutdown",
+        "passwords_needed_to_start": [],
+        "playbook": "unix_shutdown.yml",
+        "project": 99,
+        "related": {
+            "activity_stream": "/api/v2/jobs/23085/activity_stream/",
+            "cancel": "/api/v2/jobs/23085/cancel/",
+            "create_schedule": "/api/v2/jobs/23085/create_schedule/",
+            "created_by": "/api/v2/users/3/",
+            "credentials": "/api/v2/jobs/23085/credentials/",
+            "extra_credentials": "/api/v2/jobs/23085/extra_credentials/",
+            "inventory": "/api/v2/inventories/28/",
+            "job_events": "/api/v2/jobs/23085/job_events/",
+            "job_host_summaries": "/api/v2/jobs/23085/job_host_summaries/",
+            "job_template": "/api/v2/job_templates/102/",
+            "labels": "/api/v2/jobs/23085/labels/",
+            "modified_by": "/api/v2/users/3/",
+            "notifications": "/api/v2/jobs/23085/notifications/",
+            "project": "/api/v2/projects/99/",
+            "relaunch": "/api/v2/jobs/23085/relaunch/",
+            "stdout": "/api/v2/jobs/23085/stdout/",
+            "unified_job_template": "/api/v2/job_templates/102/"
+        },
+        "result_traceback": "",
+        "scm_revision": "",
+        "skip_tags": "",
+        "start_at_task": "",
+        "started": null,
+        "status": "pending",
+        "summary_fields": {
+            "created_by": {
+                "first_name": "",
+                "id": 3,
+                "last_name": "",
+                "username": "asp-minuet"
+            },
+            "credentials": [
+                {
+                    "cloud": false,
+                    "description": "",
+                    "id": 17,
+                    "kind": "ssh",
+                    "name": "unix_tower"
+                }
+            ],
+            "extra_credentials": [],
+            "inventory": {
+                "description": "",
+                "groups_with_active_failures": 0,
+                "has_active_failures": false,
+                "has_inventory_sources": true,
+                "hosts_with_active_failures": 0,
+                "id": 28,
+                "inventory_sources_with_failures": 1,
+                "kind": "",
+                "name": "unix-inventory",
+                "organization_id": 1,
+                "total_groups": 3,
+                "total_hosts": 7,
+                "total_inventory_sources": 1
+            },
+            "job_template": {
+                "description": "Shut down a unix server",
+                "id": 102,
+                "name": "unix_shutdown"
+            },
+            "labels": {
+                "count": 0,
+                "results": []
+            },
+            "modified_by": {
+                "first_name": "",
+                "id": 3,
+                "last_name": "",
+                "username": "asp-minuet"
+            },
+            "project": {
+                "description": "retirement process for UNIX servers",
+                "id": 99,
+                "name": "unix_retirement",
+                "scm_type": "git",
+                "status": "failed"
+            },
+            "unified_job_template": {
+                "description": "Shut down a unix server",
+                "id": 102,
+                "name": "unix_shutdown",
+                "unified_job_type": "job"
+            },
+            "user_capabilities": {
+                "delete": true,
+                "start": true
+            }
+        },
+        "timeout": 0,
+        "type": "job",
+        "unified_job_template": 102,
+        "url": "/api/v2/jobs/23085/",
+        "use_fact_cache": false,
+        "verbosity": 0
+    },
+    "expected_http_response_codes": [
+        "200",
+        "201"
+    ],
+    "headers": "gAAAAABhH0b1WJSxEDQYjhB_aoaTXu6J3lJF-SiRyE7NouSCVznotxqAnN79laWv06C5pQjntKc_dP6JwFRyf8-TY8sPzBrRy9wNWzAB3gleLRv5AaHCn3I8-XtsslYCnW6ybMlzhGXIpL1TNdBiUld1dcchZHib6R376ajITBpvEVzXXfY1UrDn4s977SbPMBIXmq4-SZVjPAYnr5G992zp9BR6BRGYyLG1OU1KzQBrcYR1r1QglToVrDEjJVFmZbk8y74GTKqJKVz31T35l5ttOK1PrZHZokGXHG0US9Sm6yn-RZgaKcpdIXMC4xROs_pn63QjFZXVsg8rhA7XgMzuDUUho4s6mA==",
+    "job_created_epoch": 1629439733,
+    "job_created_timestamp": "2021-08-20T06:08:53.993855",
+    "job_duration_seconds": 84,
+    "job_finished_epoch": 1629439817,
+    "job_finished_timestamp": "2021-08-20T06:10:17.939531",
+    "microfunction": "unix-shutdown",
+    "min_approvals_required": "1",
+    "orig-req-path": "https://kong.healthpartners.com/unix-shutdown/",
+    "owners": [
+        "kevin.a.fischer@healthpartners.com",
+        "freligh.w.dalrymple@healthpartners.com",
+        "istunixservers@healthpartners.com"
+    ],
+    "requires_approval": false,
+    "status": "started",
+    "timeline": [
+        {
+            "epoch_time": 1629439733,
+            "event": "job created",
+            "status": "pending",
+            "time": "08-20-2021 06:08:53"
+        },
+        {
+            "epoch_time": 1629439817,
+            "event": "status changed",
+            "status": "started",
+            "time": "08-20-2021 06:10:17"
+        }
+    ],
+    "type": "job"
+}
