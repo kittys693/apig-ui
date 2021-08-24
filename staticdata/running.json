@@ -1,0 +1,783 @@
+[
+    
+    {
+        "apig_jid": "server-retirement-20210819-212756-3677",
+        "build_params": {
+            "apig_jid": "server-retirement-20210819-212756-3677",
+            "cmdb_ci": "001252e94f6be200f573dec85210c7f8",
+            "is_database": false,
+            "os": "linux",
+            "requester_email": "martins.i.sado@healthpartners.com",
+            "requester_group": "IS&T Security Vulnerability and Threat Management",
+            "requester_name": "Martins",
+            "sn_change": "CHG0099261",
+            "sn_ritm": "RITM0761467",
+            "target_server_name": "ld0007",
+            "upstream_jid": "manage-server-retirement-20210819-212729-8109"
+        },
+        "job_created_epoch": 1629408476,
+        "job_created_timestamp": "2021-08-19T21:27:56.494266",
+        "job_duration_seconds": 82685,
+        "job_finished_epoch": 1629491161,
+        "job_finished_timestamp": "2021-08-20T20:26:01.738799",
+        "owners": [
+            "kevin.a.fischer@healthpartners.com",
+            "sravika.x.mandava@healthpartners.com",
+            "holden.c.smith@healthpartners.com",
+            "freligh.w.dalrymple@healthpartners.com"
+        ],
+        "status": "started",
+        "timeline": [
+            {
+                "epoch_time": 1629408475,
+                "event": "job created",
+                "status": "pending",
+                "time": "08-19-2021 21:27:55"
+            },
+            {
+                "epoch_time": 1629439221,
+                "event": "status changed",
+                "status": "started",
+                "time": "08-20-2021 06:00:21"
+            },
+            {
+                "epoch_time": 1629439238,
+                "event": "Started sn_task_retirement_core (manage-servicenow-tasks-20210820-060038-8600)",
+                "status": "started",
+                "time": "08-20-2021 06:00:38"
+            },
+            {
+                "epoch_time": 1629439241,
+                "event": "Started sn_task_retirement_linux (manage-servicenow-tasks-20210820-060041-2092)",
+                "status": "started",
+                "time": "08-20-2021 06:00:41"
+            },
+            {
+                "epoch_time": 1629439282,
+                "event": "sn_task_retirement_linux successful (manage-servicenow-tasks-20210820-060041-2092)",
+                "status": "started",
+                "time": "08-20-2021 06:01:22"
+            },
+            {
+                "epoch_time": 1629439302,
+                "event": "sn_task_retirement_core successful (manage-servicenow-tasks-20210820-060038-8600)",
+                "status": "started",
+                "time": "08-20-2021 06:01:42"
+            },
+            {
+                "epoch_time": 1629439303,
+                "event": "Started remove_from_foglight (foglight-20210820-060143-9800)",
+                "status": "started",
+                "time": "08-20-2021 06:01:43"
+            },
+            {
+                "epoch_time": 1629439304,
+                "event": "Started sn_task_manage_foglight (manage-servicenow-tasks-20210820-060144-7790)",
+                "status": "started",
+                "time": "08-20-2021 06:01:44"
+            },
+            {
+                "epoch_time": 1629439345,
+                "event": "sn_task_manage_foglight successful (manage-servicenow-tasks-20210820-060144-7790)",
+                "status": "started",
+                "time": "08-20-2021 06:02:25"
+            },
+            {
+                "epoch_time": 1629439406,
+                "event": "remove_from_foglight successful (foglight-20210820-060143-9800)",
+                "status": "started",
+                "time": "08-20-2021 06:03:26"
+            },
+            {
+                "epoch_time": 1629439407,
+                "event": "Started unix_server_pretirement (unix-server-pretirement-20210820-060326-9729)",
+                "status": "started",
+                "time": "08-20-2021 06:03:27"
+            },
+            {
+                "epoch_time": 1629439408,
+                "event": "Started sn_task_close_foglight (manage-servicenow-tasks-20210820-060328-770)",
+                "status": "started",
+                "time": "08-20-2021 06:03:28"
+            },
+            {
+                "epoch_time": 1629439450,
+                "event": "sn_task_close_foglight successful (manage-servicenow-tasks-20210820-060328-770)",
+                "status": "started",
+                "time": "08-20-2021 06:04:10"
+            }
+        ]
+    },
+    {
+        "apig_jid": "server-retirement-20210819-212801-5742",
+        "build_params": {
+            "apig_jid": "server-retirement-20210819-212801-5742",
+            "cmdb_ci": "801252e94f6be200f573dec85210c7fa",
+            "is_database": false,
+            "os": "linux",
+            "requester_email": "martins.i.sado@healthpartners.com",
+            "requester_group": "IS&T Security Vulnerability and Threat Management",
+            "requester_name": "Martins",
+            "sn_change": "CHG0099259",
+            "sn_ritm": "RITM0761465",
+            "target_server_name": "ld0008",
+            "upstream_jid": "manage-server-retirement-20210819-212726-742"
+        },
+        "job_created_epoch": 1629408481,
+        "job_created_timestamp": "2021-08-19T21:28:01.452177",
+        "job_duration_seconds": 82668,
+        "job_finished_epoch": 1629491149,
+        "job_finished_timestamp": "2021-08-20T20:25:49.549683",
+        "owners": [
+            "kevin.a.fischer@healthpartners.com",
+            "sravika.x.mandava@healthpartners.com",
+            "holden.c.smith@healthpartners.com",
+            "freligh.w.dalrymple@healthpartners.com"
+        ],
+        "status": "started",
+        "timeline": [
+            {
+                "epoch_time": 1629408480,
+                "event": "job created",
+                "status": "pending",
+                "time": "08-19-2021 21:28:00"
+            },
+            {
+                "epoch_time": 1629439218,
+                "event": "status changed",
+                "status": "started",
+                "time": "08-20-2021 06:00:18"
+            },
+            {
+                "epoch_time": 1629439229,
+                "event": "Started sn_task_retirement_core (manage-servicenow-tasks-20210820-060029-4910)",
+                "status": "started",
+                "time": "08-20-2021 06:00:29"
+            },
+            {
+                "epoch_time": 1629439231,
+                "event": "Started sn_task_retirement_linux (manage-servicenow-tasks-20210820-060031-1930)",
+                "status": "started",
+                "time": "08-20-2021 06:00:31"
+            },
+            {
+                "epoch_time": 1629439292,
+                "event": "sn_task_retirement_core successful (manage-servicenow-tasks-20210820-060029-4910)",
+                "status": "started",
+                "time": "08-20-2021 06:01:32"
+            },
+            {
+                "epoch_time": 1629439292,
+                "event": "sn_task_retirement_linux successful (manage-servicenow-tasks-20210820-060031-1930)",
+                "status": "started",
+                "time": "08-20-2021 06:01:32"
+            },
+            {
+                "epoch_time": 1629439293,
+                "event": "Started remove_from_foglight (foglight-20210820-060133-6547)",
+                "status": "started",
+                "time": "08-20-2021 06:01:33"
+            },
+            {
+                "epoch_time": 1629439294,
+                "event": "Started sn_task_manage_foglight (manage-servicenow-tasks-20210820-060134-4320)",
+                "status": "started",
+                "time": "08-20-2021 06:01:34"
+            },
+            {
+                "epoch_time": 1629439335,
+                "event": "sn_task_manage_foglight successful (manage-servicenow-tasks-20210820-060134-4320)",
+                "status": "started",
+                "time": "08-20-2021 06:02:15"
+            },
+            {
+                "epoch_time": 1629439416,
+                "event": "remove_from_foglight successful (foglight-20210820-060133-6547)",
+                "status": "started",
+                "time": "08-20-2021 06:03:36"
+            },
+            {
+                "epoch_time": 1629439416,
+                "event": "Started unix_server_pretirement (unix-server-pretirement-20210820-060336-3729)",
+                "status": "started",
+                "time": "08-20-2021 06:03:36"
+            },
+            {
+                "epoch_time": 1629439417,
+                "event": "Started sn_task_close_foglight (manage-servicenow-tasks-20210820-060337-1542)",
+                "status": "started",
+                "time": "08-20-2021 06:03:37"
+            },
+            {
+                "epoch_time": 1629439458,
+                "event": "sn_task_close_foglight successful (manage-servicenow-tasks-20210820-060337-1542)",
+                "status": "started",
+                "time": "08-20-2021 06:04:18"
+            }
+        ]
+    },
+    {
+        "apig_jid": "server-retirement-20210819-212803-6271",
+        "build_params": {
+            "apig_jid": "server-retirement-20210819-212803-6271",
+            "cmdb_ci": "c41252e94f6be200f573dec85210c7e9",
+            "is_database": false,
+            "os": "linux",
+            "requester_email": "martins.i.sado@healthpartners.com",
+            "requester_group": "IS&T Security Vulnerability and Threat Management",
+            "requester_name": "Martins",
+            "sn_change": "CHG0099258",
+            "sn_ritm": "RITM0761464",
+            "target_server_name": "ld0006",
+            "upstream_jid": "manage-server-retirement-20210819-212724-6489"
+        },
+        "job_created_epoch": 1629408483,
+        "job_created_timestamp": "2021-08-19T21:28:03.864955",
+        "job_duration_seconds": 82666,
+        "job_finished_epoch": 1629491149,
+        "job_finished_timestamp": "2021-08-20T20:25:49.948949",
+        "owners": [
+            "kevin.a.fischer@healthpartners.com",
+            "sravika.x.mandava@healthpartners.com",
+            "holden.c.smith@healthpartners.com",
+            "freligh.w.dalrymple@healthpartners.com"
+        ],
+        "status": "started",
+        "timeline": [
+            {
+                "epoch_time": 1629408483,
+                "event": "job created",
+                "status": "pending",
+                "time": "08-19-2021 21:28:03"
+            },
+            {
+                "epoch_time": 1629439222,
+                "event": "status changed",
+                "status": "started",
+                "time": "08-20-2021 06:00:22"
+            },
+            {
+                "epoch_time": 1629439239,
+                "event": "Started sn_task_retirement_core (manage-servicenow-tasks-20210820-060039-9333)",
+                "status": "started",
+                "time": "08-20-2021 06:00:39"
+            },
+            {
+                "epoch_time": 1629439242,
+                "event": "Started sn_task_retirement_linux (manage-servicenow-tasks-20210820-060042-512)",
+                "status": "started",
+                "time": "08-20-2021 06:00:42"
+            },
+            {
+                "epoch_time": 1629439282,
+                "event": "sn_task_retirement_core successful (manage-servicenow-tasks-20210820-060039-9333)",
+                "status": "started",
+                "time": "08-20-2021 06:01:22"
+            },
+            {
+                "epoch_time": 1629439283,
+                "event": "sn_task_retirement_linux successful (manage-servicenow-tasks-20210820-060042-512)",
+                "status": "started",
+                "time": "08-20-2021 06:01:23"
+            },
+            {
+                "epoch_time": 1629439284,
+                "event": "Started remove_from_foglight (foglight-20210820-060123-4284)",
+                "status": "started",
+                "time": "08-20-2021 06:01:24"
+            },
+            {
+                "epoch_time": 1629439285,
+                "event": "Started sn_task_manage_foglight (manage-servicenow-tasks-20210820-060125-3867)",
+                "status": "started",
+                "time": "08-20-2021 06:01:25"
+            },
+            {
+                "epoch_time": 1629439326,
+                "event": "sn_task_manage_foglight successful (manage-servicenow-tasks-20210820-060125-3867)",
+                "status": "started",
+                "time": "08-20-2021 06:02:06"
+            },
+            {
+                "epoch_time": 1629439407,
+                "event": "remove_from_foglight successful (foglight-20210820-060123-4284)",
+                "status": "started",
+                "time": "08-20-2021 06:03:27"
+            },
+            {
+                "epoch_time": 1629439408,
+                "event": "Started unix_server_pretirement (unix-server-pretirement-20210820-060327-4906)",
+                "status": "started",
+                "time": "08-20-2021 06:03:28"
+            },
+            {
+                "epoch_time": 1629439409,
+                "event": "Started sn_task_close_foglight (manage-servicenow-tasks-20210820-060329-8283)",
+                "status": "started",
+                "time": "08-20-2021 06:03:29"
+            },
+            {
+                "epoch_time": 1629439450,
+                "event": "sn_task_close_foglight successful (manage-servicenow-tasks-20210820-060329-8283)",
+                "status": "started",
+                "time": "08-20-2021 06:04:10"
+            }
+        ]
+    },
+    {
+        "apig_jid": "server-retirement-20210819-213217-2012",
+        "build_params": {
+            "apig_jid": "server-retirement-20210819-213217-2012",
+            "cmdb_ci": "041252e94f6be200f573dec85210c7fc",
+            "is_database": false,
+            "os": "linux",
+            "requester_email": "martins.i.sado@healthpartners.com",
+            "requester_group": "IS&T Security Vulnerability and Threat Management",
+            "requester_name": "Martins",
+            "sn_change": "CHG0099260",
+            "sn_ritm": "RITM0761466",
+            "target_server_name": "ld0009",
+            "upstream_jid": "manage-server-retirement-20210819-213205-2896"
+        },
+        "job_created_epoch": 1629408737,
+        "job_created_timestamp": "2021-08-19T21:32:17.304274",
+        "job_duration_seconds": 82408,
+        "job_finished_epoch": 1629491145,
+        "job_finished_timestamp": "2021-08-20T20:25:45.350204",
+        "owners": [
+            "kevin.a.fischer@healthpartners.com",
+            "sravika.x.mandava@healthpartners.com",
+            "holden.c.smith@healthpartners.com",
+            "freligh.w.dalrymple@healthpartners.com"
+        ],
+        "status": "started",
+        "timeline": [
+            {
+                "epoch_time": 1629408736,
+                "event": "job created",
+                "status": "pending",
+                "time": "08-19-2021 21:32:16"
+            },
+            {
+                "epoch_time": 1629439219,
+                "event": "status changed",
+                "status": "started",
+                "time": "08-20-2021 06:00:19"
+            },
+            {
+                "epoch_time": 1629439232,
+                "event": "Started sn_task_retirement_core (manage-servicenow-tasks-20210820-060032-9924)",
+                "status": "started",
+                "time": "08-20-2021 06:00:32"
+            },
+            {
+                "epoch_time": 1629439235,
+                "event": "Started sn_task_retirement_linux (manage-servicenow-tasks-20210820-060035-6215)",
+                "status": "started",
+                "time": "08-20-2021 06:00:35"
+            },
+            {
+                "epoch_time": 1629439296,
+                "event": "sn_task_retirement_core successful (manage-servicenow-tasks-20210820-060032-9924)",
+                "status": "started",
+                "time": "08-20-2021 06:01:36"
+            },
+            {
+                "epoch_time": 1629439296,
+                "event": "sn_task_retirement_linux successful (manage-servicenow-tasks-20210820-060035-6215)",
+                "status": "started",
+                "time": "08-20-2021 06:01:36"
+            },
+            {
+                "epoch_time": 1629439297,
+                "event": "Started remove_from_foglight (foglight-20210820-060137-5674)",
+                "status": "started",
+                "time": "08-20-2021 06:01:37"
+            },
+            {
+                "epoch_time": 1629439298,
+                "event": "Started sn_task_manage_foglight (manage-servicenow-tasks-20210820-060138-4927)",
+                "status": "started",
+                "time": "08-20-2021 06:01:38"
+            },
+            {
+                "epoch_time": 1629439339,
+                "event": "sn_task_manage_foglight successful (manage-servicenow-tasks-20210820-060138-4927)",
+                "status": "started",
+                "time": "08-20-2021 06:02:19"
+            },
+            {
+                "epoch_time": 1629439400,
+                "event": "remove_from_foglight successful (foglight-20210820-060137-5674)",
+                "status": "started",
+                "time": "08-20-2021 06:03:20"
+            },
+            {
+                "epoch_time": 1629439401,
+                "event": "Started unix_server_pretirement (unix-server-pretirement-20210820-060320-1867)",
+                "status": "started",
+                "time": "08-20-2021 06:03:21"
+            },
+            {
+                "epoch_time": 1629439401,
+                "event": "Started sn_task_close_foglight (manage-servicenow-tasks-20210820-060321-6793)",
+                "status": "started",
+                "time": "08-20-2021 06:03:21"
+            },
+            {
+                "epoch_time": 1629439463,
+                "event": "sn_task_close_foglight successful (manage-servicenow-tasks-20210820-060321-6793)",
+                "status": "started",
+                "time": "08-20-2021 06:04:23"
+            }
+        ]
+    },
+    {
+        "apig_jid": "unix-server-pretirement-20210820-060320-1867",
+        "build_params": {
+            "apig_jid": "unix-server-pretirement-20210820-060320-1867",
+            "sn_change": "CHG0099260",
+            "target_server_name": "ld0009",
+            "upstream_jid": "server-retirement-20210819-213217-2012"
+        },
+        "job_created_epoch": 1629439400,
+        "job_created_timestamp": "2021-08-20T06:03:20.937981",
+        "job_duration_seconds": 51751,
+        "job_finished_epoch": 1629491151,
+        "job_finished_timestamp": "2021-08-20T20:25:51.747590",
+        "owners": [
+            "kevin.a.fischer@healthpartners.com",
+            "sravika.x.mandava@healthpartners.com",
+            "holden.c.smith@healthpartners.com",
+            "freligh.w.dalrymple@healthpartners.com"
+        ],
+        "status": "started",
+        "timeline": [
+            {
+                "epoch_time": 1629439400,
+                "event": "job created",
+                "status": "pending",
+                "time": "08-20-2021 06:03:20"
+            },
+            {
+                "epoch_time": 1629439440,
+                "event": "status changed",
+                "status": "started",
+                "time": "08-20-2021 06:04:00"
+            },
+            {
+                "epoch_time": 1629439449,
+                "event": "Started sn_task_shutdown_server_linux (manage-servicenow-tasks-20210820-060409-5292)",
+                "status": "started",
+                "time": "08-20-2021 06:04:09"
+            },
+            {
+                "epoch_time": 1629439490,
+                "event": "sn_task_shutdown_server_linux successful (manage-servicenow-tasks-20210820-060409-5292)",
+                "status": "started",
+                "time": "08-20-2021 06:04:50"
+            },
+            {
+                "epoch_time": 1629439492,
+                "event": "Started unix_pre_retirement (unix-pre-retirement-20210820-060451-1512)",
+                "status": "started",
+                "time": "08-20-2021 06:04:52"
+            }
+        ]
+    },
+    {
+        "apig_jid": "unix-server-pretirement-20210820-060327-4906",
+        "build_params": {
+            "apig_jid": "unix-server-pretirement-20210820-060327-4906",
+            "sn_change": "CHG0099258",
+            "target_server_name": "ld0006",
+            "upstream_jid": "server-retirement-20210819-212803-6271"
+        },
+        "job_created_epoch": 1629439407,
+        "job_created_timestamp": "2021-08-20T06:03:27.900141",
+        "job_duration_seconds": 51752,
+        "job_finished_epoch": 1629491159,
+        "job_finished_timestamp": "2021-08-20T20:25:59.338603",
+        "owners": [
+            "kevin.a.fischer@healthpartners.com",
+            "sravika.x.mandava@healthpartners.com",
+            "holden.c.smith@healthpartners.com",
+            "freligh.w.dalrymple@healthpartners.com"
+        ],
+        "status": "started",
+        "timeline": [
+            {
+                "epoch_time": 1629439407,
+                "event": "job created",
+                "status": "pending",
+                "time": "08-20-2021 06:03:27"
+            },
+            {
+                "epoch_time": 1629439438,
+                "event": "status changed",
+                "status": "started",
+                "time": "08-20-2021 06:03:58"
+            },
+            {
+                "epoch_time": 1629439446,
+                "event": "Started sn_task_shutdown_server_linux (manage-servicenow-tasks-20210820-060405-7530)",
+                "status": "started",
+                "time": "08-20-2021 06:04:06"
+            },
+            {
+                "epoch_time": 1629439507,
+                "event": "sn_task_shutdown_server_linux successful (manage-servicenow-tasks-20210820-060405-7530)",
+                "status": "started",
+                "time": "08-20-2021 06:05:07"
+            },
+            {
+                "epoch_time": 1629439507,
+                "event": "Started unix_pre_retirement (unix-pre-retirement-20210820-060507-929)",
+                "status": "started",
+                "time": "08-20-2021 06:05:07"
+            }
+        ]
+    },
+    {
+        "apig_jid": "unix-server-pretirement-20210820-060326-9729",
+        "build_params": {
+            "apig_jid": "unix-server-pretirement-20210820-060326-9729",
+            "sn_change": "CHG0099261",
+            "target_server_name": "ld0007",
+            "upstream_jid": "server-retirement-20210819-212756-3677"
+        },
+        "job_created_epoch": 1629439407,
+        "job_created_timestamp": "2021-08-20T06:03:27.024046",
+        "job_duration_seconds": 51740,
+        "job_finished_epoch": 1629491147,
+        "job_finished_timestamp": "2021-08-20T20:25:47.748891",
+        "owners": [
+            "kevin.a.fischer@healthpartners.com",
+            "sravika.x.mandava@healthpartners.com",
+            "holden.c.smith@healthpartners.com",
+            "freligh.w.dalrymple@healthpartners.com"
+        ],
+        "status": "started",
+        "timeline": [
+            {
+                "epoch_time": 1629439406,
+                "event": "job created",
+                "status": "pending",
+                "time": "08-20-2021 06:03:26"
+            },
+            {
+                "epoch_time": 1629439439,
+                "event": "status changed",
+                "status": "started",
+                "time": "08-20-2021 06:03:59"
+            },
+            {
+                "epoch_time": 1629439448,
+                "event": "Started sn_task_shutdown_server_linux (manage-servicenow-tasks-20210820-060408-4566)",
+                "status": "started",
+                "time": "08-20-2021 06:04:08"
+            },
+            {
+                "epoch_time": 1629439489,
+                "event": "sn_task_shutdown_server_linux successful (manage-servicenow-tasks-20210820-060408-4566)",
+                "status": "started",
+                "time": "08-20-2021 06:04:49"
+            },
+            {
+                "epoch_time": 1629439490,
+                "event": "Started unix_pre_retirement (unix-pre-retirement-20210820-060450-1202)",
+                "status": "started",
+                "time": "08-20-2021 06:04:50"
+            },
+            {
+                "epoch_time": 1629439733,
+                "event": "unix_pre_retirement successful (unix-pre-retirement-20210820-060450-1202)",
+                "status": "started",
+                "time": "08-20-2021 06:08:53"
+            },
+            {
+                "epoch_time": 1629439734,
+                "event": "Started unix_shutdown (unix-shutdown-20210820-060853-8871)",
+                "status": "started",
+                "time": "08-20-2021 06:08:54"
+            }
+        ]
+    },
+    {
+        "apig_jid": "unix-server-pretirement-20210820-060336-3729",
+        "build_params": {
+            "apig_jid": "unix-server-pretirement-20210820-060336-3729",
+            "sn_change": "CHG0099259",
+            "target_server_name": "ld0008",
+            "upstream_jid": "server-retirement-20210819-212801-5742"
+        },
+        "job_created_epoch": 1629439416,
+        "job_created_timestamp": "2021-08-20T06:03:36.873495",
+        "job_duration_seconds": 51734,
+        "job_finished_epoch": 1629491150,
+        "job_finished_timestamp": "2021-08-20T20:25:50.948395",
+        "owners": [
+            "kevin.a.fischer@healthpartners.com",
+            "sravika.x.mandava@healthpartners.com",
+            "holden.c.smith@healthpartners.com",
+            "freligh.w.dalrymple@healthpartners.com"
+        ],
+        "status": "started",
+        "timeline": [
+            {
+                "epoch_time": 1629439416,
+                "event": "job created",
+                "status": "pending",
+                "time": "08-20-2021 06:03:36"
+            },
+            {
+                "epoch_time": 1629439438,
+                "event": "status changed",
+                "status": "started",
+                "time": "08-20-2021 06:03:58"
+            },
+            {
+                "epoch_time": 1629439447,
+                "event": "Started sn_task_shutdown_server_linux (manage-servicenow-tasks-20210820-060407-9094)",
+                "status": "started",
+                "time": "08-20-2021 06:04:07"
+            },
+            {
+                "epoch_time": 1629439508,
+                "event": "sn_task_shutdown_server_linux successful (manage-servicenow-tasks-20210820-060407-9094)",
+                "status": "started",
+                "time": "08-20-2021 06:05:08"
+            },
+            {
+                "epoch_time": 1629439509,
+                "event": "Started unix_pre_retirement (unix-pre-retirement-20210820-060509-7501)",
+                "status": "started",
+                "time": "08-20-2021 06:05:09"
+            },
+            {
+                "epoch_time": 1629439671,
+                "event": "unix_pre_retirement successful (unix-pre-retirement-20210820-060509-7501)",
+                "status": "started",
+                "time": "08-20-2021 06:07:51"
+            },
+            {
+                "epoch_time": 1629439672,
+                "event": "Started unix_shutdown (unix-shutdown-20210820-060751-5206)",
+                "status": "started",
+                "time": "08-20-2021 06:07:52"
+            }
+        ]
+    },
+    {
+        "apig_jid": "unix-pre-retirement-20210820-060451-1512",
+        "job_created_epoch": 1629439491,
+        "job_created_timestamp": "2021-08-20T06:04:51.748177",
+        "job_duration_seconds": 31,
+        "job_finished_epoch": 1629439522,
+        "job_finished_timestamp": "2021-08-20T06:05:22.656420",
+        "owners": [
+            "kevin.a.fischer@healthpartners.com",
+            "freligh.w.dalrymple@healthpartners.com",
+            "istunixservers@healthpartners.com"
+        ],
+        "status": "started",
+        "timeline": [
+            {
+                "epoch_time": 1629439491,
+                "event": "job created",
+                "status": "pending",
+                "time": "08-20-2021 06:04:51"
+            },
+            {
+                "epoch_time": 1629439522,
+                "event": "status changed",
+                "status": "started",
+                "time": "08-20-2021 06:05:22"
+            }
+        ]
+    },
+    {
+        "apig_jid": "unix-pre-retirement-20210820-060507-929",
+        "job_created_epoch": 1629439507,
+        "job_created_timestamp": "2021-08-20T06:05:07.689336",
+        "job_duration_seconds": 16,
+        "job_finished_epoch": 1629439523,
+        "job_finished_timestamp": "2021-08-20T06:05:23.523766",
+        "owners": [
+            "kevin.a.fischer@healthpartners.com",
+            "freligh.w.dalrymple@healthpartners.com",
+            "istunixservers@healthpartners.com"
+        ],
+        "status": "started",
+        "timeline": [
+            {
+                "epoch_time": 1629439507,
+                "event": "job created",
+                "status": "pending",
+                "time": "08-20-2021 06:05:07"
+            },
+            {
+                "epoch_time": 1629439523,
+                "event": "status changed",
+                "status": "started",
+                "time": "08-20-2021 06:05:23"
+            }
+        ]
+    },
+    {
+        "apig_jid": "unix-shutdown-20210820-060751-5206",
+        "job_created_epoch": 1629439672,
+        "job_created_timestamp": "2021-08-20T06:07:52.004416",
+        "job_duration_seconds": 32,
+        "job_finished_epoch": 1629439704,
+        "job_finished_timestamp": "2021-08-20T06:08:24.242035",
+        "owners": [
+            "kevin.a.fischer@healthpartners.com",
+            "freligh.w.dalrymple@healthpartners.com",
+            "istunixservers@healthpartners.com"
+        ],
+        "status": "started",
+        "timeline": [
+            {
+                "epoch_time": 1629439671,
+                "event": "job created",
+                "status": "pending",
+                "time": "08-20-2021 06:07:51"
+            },
+            {
+                "epoch_time": 1629439704,
+                "event": "status changed",
+                "status": "started",
+                "time": "08-20-2021 06:08:24"
+            }
+        ]
+    },
+    {
+        "apig_jid": "unix-shutdown-20210820-060853-8871",
+        "job_created_epoch": 1629439733,
+        "job_created_timestamp": "2021-08-20T06:08:53.993855",
+        "job_duration_seconds": 84,
+        "job_finished_epoch": 1629439817,
+        "job_finished_timestamp": "2021-08-20T06:10:17.939531",
+        "owners": [
+            "kevin.a.fischer@healthpartners.com",
+            "freligh.w.dalrymple@healthpartners.com",
+            "istunixservers@healthpartners.com"
+        ],
+        "status": "started",
+        "timeline": [
+            {
+                "epoch_time": 1629439733,
+                "event": "job created",
+                "status": "pending",
+                "time": "08-20-2021 06:08:53"
+            },
+            {
+                "epoch_time": 1629439817,
+                "event": "status changed",
+                "status": "started",
+                "time": "08-20-2021 06:10:17"
+            }
+        ]
+    }
+]
