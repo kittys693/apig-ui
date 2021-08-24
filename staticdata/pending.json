@@ -1,0 +1,741 @@
+[
+   
+    {
+        "update-ritm-stage-20210812-152249-7114": {
+            "apig-payload": {
+                "inputs": {
+                    "meta": "Close CHG - we done",
+                    "parent_record": "CHG0099010",
+                    "stage_or_state": "closed",
+                    "upstream_jid": "server-retirement-20210812-142401-4183"
+                }
+            },
+            "apig_jid": "update-ritm-stage-20210812-152249-7114",
+            "apig_server": "kong.healthpartners.com",
+            "constraints": [
+                {
+                    "attributes": {
+                        "parent_record": "CHG0099010",
+                        "target_states": [
+                            "closed",
+                            "canceled",
+                            "cancelled"
+                        ],
+                        "task_short_descriptions": [
+                            "Remove Server From Network",
+                            "Remove Server From Nexpose"
+                        ],
+                        "terminate_states": {}
+                    },
+                    "type": "servicenow"
+                }
+            ],
+            "expected_http_response_codes": [
+                "200",
+                "201"
+            ],
+            "headers": "gAAAAABhFTzIIbn0b_lG626SYmGm7kw1btPbhRyc8A3MUZffwHWRHbw4n2IYjVc25hBJuYtWLM_d1nXtaRYAI_TdTxI1au3dQL3bhqRrBcugJFO3c-82T-h6O5tD8n2ikOhOPee1VAxXb63OEqRV0gHmSfDpNu268ieNSnEYIHPboS5jzR7MYBBpVyW4POZyf82VZN1cUCJC4Hd7sA_wPo_bg6R5ZGlonWvDk_7V4OgNKaxfy9UkLg65-kpKL8q5EYV1vXWsZ2XbEef1BRmLk2PxK44oEAAtYbpCnfZFjk5rpIlVM4rlb_YFTBefTWbUF_cUR63NM612i5KS2b4Ch1A6UvAqKSAwDw==",
+            "job_created_epoch": 1628781769,
+            "job_created_timestamp": "2021-08-12T15:22:49.082965",
+            "microfunction": "update-ritm-stage",
+            "min_approvals_required": "1",
+            "orig-req-path": "https://kong.healthpartners.com/update-ritm-stage/",
+            "owners": [
+                "holden.c.smith@healthpartners.com",
+                "kevin.a.fischer@healthpartners.com",
+                "sravika.x.mandava@healthpartners.com"
+            ],
+            "requires_approval": false,
+            "status": "pending",
+            "timeline": [
+                {
+                    "epoch_time": 1628781768,
+                    "event": "job created",
+                    "status": "pending",
+                    "time": "08-12-2021 15:22:48"
+                }
+            ],
+            "type": "job"
+        }
+    },
+    {
+        "update-ritm-stage-20210820-062328-5693": {
+            "apig-payload": {
+                "inputs": {
+                    "meta": "Close CHG - we done",
+                    "parent_record": "CHG0099256",
+                    "stage_or_state": "closed",
+                    "upstream_jid": "server-retirement-20210819-212532-3748"
+                }
+            },
+            "apig_jid": "update-ritm-stage-20210820-062328-5693",
+            "apig_server": "kong.healthpartners.com",
+            "constraints": [
+                {
+                    "attributes": {
+                        "parent_record": "CHG0099256",
+                        "target_states": [
+                            "closed",
+                            "canceled",
+                            "cancelled"
+                        ],
+                        "task_short_descriptions": [
+                            "Remove Server From Network",
+                            "Remove Server From Nexpose"
+                        ],
+                        "terminate_states": {}
+                    },
+                    "type": "servicenow"
+                }
+            ],
+            "expected_http_response_codes": [
+                "200",
+                "201"
+            ],
+            "headers": "gAAAAABhH0pfsTvr7vDzMQ04IP7REPK5CRERIBADvLM-OyNE9oH-YgCyNAYSfhWQ9uDISQVxfMDAFVQpfQ-rn1zKgQo9zAoQDufLBc3oT7c9ZJvC8Wte273_mla2fhi0-ziXZqEcl_381O9VM3q80pn-FqnM-qqHCxBQLfpXILsHD_yQYn8quBim3UkXwdKgxC182npxfOB-Q6Hq5KtlhbEmgIhDZ712Zw_TTT46502PL9m2V6g4nwHmB8btCL_nrOtkPqKij5sC-JIY6BLU-t_7WcvhxIYSpNr0UkP4wJbMWsDLX7gtuSEQ5up52tToEQleclbx9FD9Ivmvzr8wiM_zlVg4aE9zjA==",
+            "job_created_epoch": 1629440608,
+            "job_created_timestamp": "2021-08-20T06:23:28.744552",
+            "microfunction": "update-ritm-stage",
+            "min_approvals_required": "1",
+            "orig-req-path": "https://kong.healthpartners.com/update-ritm-stage/",
+            "owners": [
+                "holden.c.smith@healthpartners.com",
+                "kevin.a.fischer@healthpartners.com",
+                "sravika.x.mandava@healthpartners.com"
+            ],
+            "requires_approval": false,
+            "status": "pending",
+            "timeline": [
+                {
+                    "epoch_time": 1629440607,
+                    "event": "job created",
+                    "status": "pending",
+                    "time": "08-20-2021 06:23:27"
+                }
+            ],
+            "type": "job"
+        }
+    },
+    {
+        "update-ritm-stage-20210817-155548-1894": {
+            "apig-payload": {
+                "inputs": {
+                    "meta": "Close RITM - we done",
+                    "parent_record": "RITM0747153",
+                    "stage_or_state": "complete",
+                    "upstream_jid": "server-retirement-20210722-132516-7133"
+                }
+            },
+            "apig_jid": "update-ritm-stage-20210817-155548-1894",
+            "apig_server": "kong.healthpartners.com",
+            "constraints": [
+                {
+                    "attributes": {
+                        "parent_record": "CHG0097891",
+                        "target_states": [
+                            "closed",
+                            "canceled",
+                            "cancelled"
+                        ],
+                        "task_short_descriptions": [
+                            "Remove Server From Network",
+                            "Remove Server From Nexpose"
+                        ],
+                        "terminate_states": {}
+                    },
+                    "type": "servicenow"
+                }
+            ],
+            "expected_http_response_codes": [
+                "200",
+                "201"
+            ],
+            "headers": "gAAAAABhG9wEBamgPJIiXgv2UvDo1xSR4TwRfIvOxOLeqhAmjgJXkvZq3GSMcdtGgNOjs9kkZMaIf8l-UKqv1wNC-157ESI-9VcZoux3aEX6tGk4pZHwfbB-d-KVypr0tUENPtdYMe2YihERWUAlXUU51MaVIMPDI0KoEuvqk9wNi5V6SxmzTP9kb0olyzdVEDyq56anVBPo-KWNCAsIoh8-eJJv77ZHimsqqe7EfG4hTecgqwlhboiUs76KGDnVQlpj0VnO77GAhrz9jTk9JbjrCy6r2snlM4W_Gcg1JL3j56_L4e0orPuCr8h9JVxKego_z9CPC2muBDzXQuE0RF8sp4CVpZm00w==",
+            "job_created_epoch": 1629215749,
+            "job_created_timestamp": "2021-08-17T15:55:49.007907",
+            "microfunction": "update-ritm-stage",
+            "min_approvals_required": "1",
+            "orig-req-path": "https://kong.healthpartners.com/update-ritm-stage/",
+            "owners": [
+                "holden.c.smith@healthpartners.com",
+                "kevin.a.fischer@healthpartners.com",
+                "sravika.x.mandava@healthpartners.com"
+            ],
+            "requires_approval": false,
+            "status": "pending",
+            "timeline": [
+                {
+                    "epoch_time": 1629215748,
+                    "event": "job created",
+                    "status": "pending",
+                    "time": "08-17-2021 15:55:48"
+                }
+            ],
+            "type": "job"
+        }
+    },
+    {
+        "update-ritm-stage-20210820-062327-23": {
+            "apig-payload": {
+                "inputs": {
+                    "meta": "Close RITM - we done",
+                    "parent_record": "RITM0761461",
+                    "stage_or_state": "complete",
+                    "upstream_jid": "server-retirement-20210819-212532-3748"
+                }
+            },
+            "apig_jid": "update-ritm-stage-20210820-062327-23",
+            "apig_server": "kong.healthpartners.com",
+            "constraints": [
+                {
+                    "attributes": {
+                        "parent_record": "CHG0099256",
+                        "target_states": [
+                            "closed",
+                            "canceled",
+                            "cancelled"
+                        ],
+                        "task_short_descriptions": [
+                            "Remove Server From Network",
+                            "Remove Server From Nexpose"
+                        ],
+                        "terminate_states": {}
+                    },
+                    "type": "servicenow"
+                }
+            ],
+            "expected_http_response_codes": [
+                "200",
+                "201"
+            ],
+            "headers": "gAAAAABhH0peVZ6-d-EWa5SUCCIs66Wg2YLQ0wujO3qRs3WZhnAqKzPse-7LQs-eBo-x3INyV7172mpGHzMCdm2jzz1-FF9L0bd9DE-TgzfXk3DyGeaKMro14odjkH0lZUloHoj43fzThAPV3mda9HfSsD9KHeA3o4BHY9uHvwWnQvSmUHG_5l6hr_qv1pfgMJvqXEv53FX0ojjdvoTAkK5ZtpjBkgAHywA9N5U1h-gDl3Yyrj7hLmawnq4iYBdl8t2cuMQ7Vnd_qt6tQ_J5u71yWpQLmwzbrPwEEMC3cx_JFUYWyT2WKSzDQ-mFIY8LSxlyWFiAPNXWp5T01sGYP-rQNxpKFFNSJg==",
+            "job_created_epoch": 1629440607,
+            "job_created_timestamp": "2021-08-20T06:23:27.061308",
+            "microfunction": "update-ritm-stage",
+            "min_approvals_required": "1",
+            "orig-req-path": "https://kong.healthpartners.com/update-ritm-stage/",
+            "owners": [
+                "holden.c.smith@healthpartners.com",
+                "kevin.a.fischer@healthpartners.com",
+                "sravika.x.mandava@healthpartners.com"
+            ],
+            "requires_approval": false,
+            "status": "pending",
+            "timeline": [
+                {
+                    "epoch_time": 1629440606,
+                    "event": "job created",
+                    "status": "pending",
+                    "time": "08-20-2021 06:23:26"
+                }
+            ],
+            "type": "job"
+        }
+    },
+    {
+        "update-ritm-stage-20210812-152454-527": {
+            "apig-payload": {
+                "inputs": {
+                    "meta": "Close RITM - we done",
+                    "parent_record": "RITM0758617",
+                    "stage_or_state": "complete",
+                    "upstream_jid": "server-retirement-20210812-142509-1072"
+                }
+            },
+            "apig_jid": "update-ritm-stage-20210812-152454-527",
+            "apig_server": "kong.healthpartners.com",
+            "constraints": [
+                {
+                    "attributes": {
+                        "parent_record": "CHG0099009",
+                        "target_states": [
+                            "closed",
+                            "canceled",
+                            "cancelled"
+                        ],
+                        "task_short_descriptions": [
+                            "Remove Server From Network",
+                            "Remove Server From Nexpose"
+                        ],
+                        "terminate_states": {}
+                    },
+                    "type": "servicenow"
+                }
+            ],
+            "expected_http_response_codes": [
+                "200",
+                "201"
+            ],
+            "headers": "gAAAAABhFT1FFUmrIwT7C4cifR-bCXJ7rmA0mV13qTxO33bzkIKSfUi4oJJDyoB7qShLX5Q-EVbb-ID8eITKitXBmik-V05jaXXbINbU8rI0r_993-6Xwf6H3SK-r2_gnAxB_sRa9mYjj8hfD1ZRW_v44prFJDkdb5ru09gUabyWar813--YavXr7dCIZf_sKMlHa4RZT6Qxt_Dr4ndH-EYzavT_RAnqthz0KXiEodcZH5uqs2VO-5L_hfsw4NWrCbOSqd4Yo9Ja0OVjmW3iCELAGtHzPhdii3CkpwGyvXVG5UJJCDrNWba8waskzKCC1mnEiEKSmbWPB7fsDOtldr1G6Hs8w-67aQ==",
+            "job_created_epoch": 1628781894,
+            "job_created_timestamp": "2021-08-12T15:24:54.205391",
+            "microfunction": "update-ritm-stage",
+            "min_approvals_required": "1",
+            "orig-req-path": "https://kong.healthpartners.com/update-ritm-stage/",
+            "owners": [
+                "holden.c.smith@healthpartners.com",
+                "kevin.a.fischer@healthpartners.com",
+                "sravika.x.mandava@healthpartners.com"
+            ],
+            "requires_approval": false,
+            "status": "pending",
+            "timeline": [
+                {
+                    "epoch_time": 1628781893,
+                    "event": "job created",
+                    "status": "pending",
+                    "time": "08-12-2021 15:24:53"
+                }
+            ],
+            "type": "job"
+        }
+    },
+    {
+        "notify-20210817-155524-9206": {
+            "apig-payload": {
+                "inputs": {
+                    "attributes": {
+                        "customer": "Brendan",
+                        "sn_change": "CHG0097891",
+                        "sn_ritm": "RITM0747153",
+                        "target_server_name": "hahc38"
+                    },
+                    "recipients": [
+                        "kevin.a.fischer@healthpartners.com",
+                        "sravika.x.mandava@healthpartners.com",
+                        "holden.c.smith@healthpartners.com",
+                        "81a477fe.healthpartnersconnect.onmicrosoft.com@amer.teams.ms",
+                        "brendan.m.keilen@healthpartners.com",
+                        "istservers@healthpartners.com"
+                    ],
+                    "template": "server_retirement_complete",
+                    "template_url": "https://gitlab.healthpartners.com/server-retirement/server-retirement-communications/-/raw/master/templates.json",
+                    "upstream_jid": "server-retirement-20210722-132516-7133"
+                }
+            },
+            "apig_jid": "notify-20210817-155524-9206",
+            "apig_server": "kong.healthpartners.com",
+            "constraints": [
+                {
+                    "attributes": {
+                        "parent_record": "CHG0097891",
+                        "target_states": [
+                            "closed",
+                            "canceled",
+                            "cancelled"
+                        ],
+                        "task_short_descriptions": [
+                            "Remove Server From Network",
+                            "Remove Server From Nexpose"
+                        ],
+                        "terminate_states": {}
+                    },
+                    "type": "servicenow"
+                }
+            ],
+            "expected_http_response_codes": [
+                "200",
+                "201"
+            ],
+            "headers": "gAAAAABhG9vrgWIMRh_pb4Yc-R0POuslLJcuPAm2QYhL8mhnU_YzbaHyBzUMU2ncbk9ZMLjthTPCC9npcyxsTMKVjskAbUt7-4A3Qu0Bsz-mbSItxKtArTUNcqwQqHud-t9jNAq54Y24Ekauk_VR9Q4aQcF24-OfBuYn75OrVoSajPGiMbgOVL1xSuUtqTPFEqg3Wh9idRLhTwhfk5RTsjfcgOgqpt6gHUFGwh_Bh87mCpZYkXqyTzE=",
+            "job_created_epoch": 1629215724,
+            "job_created_timestamp": "2021-08-17T15:55:24.486409",
+            "microfunction": "notify",
+            "min_approvals_required": "1",
+            "orig-req-path": "https://kong.healthpartners.com/notify/",
+            "owners": [
+                "kevin.a.fischer@healthpartners.com",
+                "sravika.x.mandava@healthpartners.com",
+                "holden.c.smith@healthpartners.com",
+                "freligh.w.dalrymple@healthpartners.com"
+            ],
+            "requires_approval": false,
+            "status": "pending",
+            "timeline": [
+                {
+                    "epoch_time": 1629215723,
+                    "event": "job created",
+                    "status": "pending",
+                    "time": "08-17-2021 15:55:23"
+                }
+            ],
+            "type": "job"
+        }
+    },
+    {
+        "notify-20210812-152408-5911": {
+            "apig-payload": {
+                "inputs": {
+                    "attributes": {
+                        "customer": "Jeff",
+                        "sn_change": "CHG0099009",
+                        "sn_ritm": "RITM0758617",
+                        "target_server_name": "sepm1180sec"
+                    },
+                    "recipients": [
+                        "kevin.a.fischer@healthpartners.com",
+                        "sravika.x.mandava@healthpartners.com",
+                        "holden.c.smith@healthpartners.com",
+                        "81a477fe.healthpartnersconnect.onmicrosoft.com@amer.teams.ms",
+                        "jeff.w.carlson@healthpartners.com",
+                        "istservers@healthpartners.com"
+                    ],
+                    "template": "server_retirement_complete",
+                    "template_url": "https://gitlab.healthpartners.com/server-retirement/server-retirement-communications/-/raw/master/templates.json",
+                    "upstream_jid": "server-retirement-20210812-142509-1072"
+                }
+            },
+            "apig_jid": "notify-20210812-152408-5911",
+            "apig_server": "kong.healthpartners.com",
+            "constraints": [
+                {
+                    "attributes": {
+                        "parent_record": "CHG0099009",
+                        "target_states": [
+                            "closed",
+                            "canceled",
+                            "cancelled"
+                        ],
+                        "task_short_descriptions": [
+                            "Remove Server From Network",
+                            "Remove Server From Nexpose"
+                        ],
+                        "terminate_states": {}
+                    },
+                    "type": "servicenow"
+                }
+            ],
+            "expected_http_response_codes": [
+                "200",
+                "201"
+            ],
+            "headers": "gAAAAABhFT0YNoHjpP4wwdZN1x-O0m5xGaQSh12CWjUDXcVAoxxKLG7b9m5c_QPwQS9Bj6-fJDWOTc_MYjWI6j5akkTztZaMHSIxxOzubi7khV9XH-gxbFin7EjuyEO5MSaIO1vpyndljPoSThofFRk5hb7g4cby_zvlMf3mtjJolCDDw63ICemKvB1U2nLJRaNU0yP5oueOY0HTlV04LT50acn_oS0kd_EL4NEJKZ3sPytNusH44oo=",
+            "job_created_epoch": 1628781848,
+            "job_created_timestamp": "2021-08-12T15:24:08.752916",
+            "microfunction": "notify",
+            "min_approvals_required": "1",
+            "orig-req-path": "https://kong.healthpartners.com/notify/",
+            "owners": [
+                "kevin.a.fischer@healthpartners.com",
+                "sravika.x.mandava@healthpartners.com",
+                "holden.c.smith@healthpartners.com",
+                "freligh.w.dalrymple@healthpartners.com"
+            ],
+            "requires_approval": false,
+            "status": "pending",
+            "timeline": [
+                {
+                    "epoch_time": 1628781848,
+                    "event": "job created",
+                    "status": "pending",
+                    "time": "08-12-2021 15:24:08"
+                }
+            ],
+            "type": "job"
+        }
+    },
+    {
+        "update-ritm-stage-20210817-155548-2863": {
+            "apig-payload": {
+                "inputs": {
+                    "meta": "Close CHG - we done",
+                    "parent_record": "CHG0097891",
+                    "stage_or_state": "closed",
+                    "upstream_jid": "server-retirement-20210722-132516-7133"
+                }
+            },
+            "apig_jid": "update-ritm-stage-20210817-155548-2863",
+            "apig_server": "kong.healthpartners.com",
+            "constraints": [
+                {
+                    "attributes": {
+                        "parent_record": "CHG0097891",
+                        "target_states": [
+                            "closed",
+                            "canceled",
+                            "cancelled"
+                        ],
+                        "task_short_descriptions": [
+                            "Remove Server From Network",
+                            "Remove Server From Nexpose"
+                        ],
+                        "terminate_states": {}
+                    },
+                    "type": "servicenow"
+                }
+            ],
+            "expected_http_response_codes": [
+                "200",
+                "201"
+            ],
+            "headers": "gAAAAABhG9wDo_5ct2oEmdMDacvjZxjZEE2-DFOakK1wibztltpWlFeLokTM_NqmUOtvbbfjSZ-eCLHn4K7J5vKpnc-cXDzWweJjO8rrOXX7oGvZA-0DxkZ6pWZkWJ6rt_py1fbpx1praJPYfNvqOyxC1H2BrfpQdIkt2PClhbNPfVh4Hguoc0RaEvqBHodneRADy-hA4QjMU05bbWM3hLTIrcdrcOd5pcTS23yD9CyvnUD0QP-rHJnL6cVSUSXeXqsAmhLAdkFim1iqtZ2wSjz2iLshp5NbZXCGDyas7ewzHW8XjsKQgC-MgLKhx01yNz4KjshKDEkqPqPKU5QhSH1hQbb0ym16JA==",
+            "job_created_epoch": 1629215748,
+            "job_created_timestamp": "2021-08-17T15:55:48.399549",
+            "microfunction": "update-ritm-stage",
+            "min_approvals_required": "1",
+            "orig-req-path": "https://kong.healthpartners.com/update-ritm-stage/",
+            "owners": [
+                "holden.c.smith@healthpartners.com",
+                "kevin.a.fischer@healthpartners.com",
+                "sravika.x.mandava@healthpartners.com"
+            ],
+            "requires_approval": false,
+            "status": "pending",
+            "timeline": [
+                {
+                    "epoch_time": 1629215747,
+                    "event": "job created",
+                    "status": "pending",
+                    "time": "08-17-2021 15:55:47"
+                }
+            ],
+            "type": "job"
+        }
+    },
+    {
+        "update-ritm-stage-20210812-152248-525": {
+            "apig-payload": {
+                "inputs": {
+                    "meta": "Close RITM - we done",
+                    "parent_record": "RITM0758618",
+                    "stage_or_state": "complete",
+                    "upstream_jid": "server-retirement-20210812-142401-4183"
+                }
+            },
+            "apig_jid": "update-ritm-stage-20210812-152248-525",
+            "apig_server": "kong.healthpartners.com",
+            "constraints": [
+                {
+                    "attributes": {
+                        "parent_record": "CHG0099010",
+                        "target_states": [
+                            "closed",
+                            "canceled",
+                            "cancelled"
+                        ],
+                        "task_short_descriptions": [
+                            "Remove Server From Network",
+                            "Remove Server From Nexpose"
+                        ],
+                        "terminate_states": {}
+                    },
+                    "type": "servicenow"
+                }
+            ],
+            "expected_http_response_codes": [
+                "200",
+                "201"
+            ],
+            "headers": "gAAAAABhFTzHzWiaW2zOspJK1DzbdRiHgUGjVaAFW3-ciDx8aHbFt_hxtV8GXLFUX-ve03zBrY3r8N7LP7FTl8Wj-qU5q-QLFvzwqeLAAimIiZzJ5J1eGjNtZz8jdhlKUKzjmoMGaW--qL4qmVMU5JfvpaL_DCehRtR35RrmQZK9WzuK4oKd2fPYCHC4nfy_BAagf6497syieOLXa_xmpX-GBi1DMQuThb5vNCk3Q9LKbQHPLQ59blIQ2keOxSpH4Lae1MR8KYxucGXEviicddoXAWKzFTnsb89aMQtQx37Ut-qX2kTHZDbBpF2H5JuAJDurYO5KkrdGhDUEUI4QdHG8jLvPFFa9AA==",
+            "job_created_epoch": 1628781768,
+            "job_created_timestamp": "2021-08-12T15:22:48.217552",
+            "microfunction": "update-ritm-stage",
+            "min_approvals_required": "1",
+            "orig-req-path": "https://kong.healthpartners.com/update-ritm-stage/",
+            "owners": [
+                "holden.c.smith@healthpartners.com",
+                "kevin.a.fischer@healthpartners.com",
+                "sravika.x.mandava@healthpartners.com"
+            ],
+            "requires_approval": false,
+            "status": "pending",
+            "timeline": [
+                {
+                    "epoch_time": 1628781767,
+                    "event": "job created",
+                    "status": "pending",
+                    "time": "08-12-2021 15:22:47"
+                }
+            ],
+            "type": "job"
+        }
+    },
+    {
+        "update-ritm-stage-20210812-153437-882": {
+            "apig-payload": {
+                "inputs": {
+                    "meta": "Close RITM - we done",
+                    "parent_record": "RITM0758619",
+                    "stage_or_state": "complete",
+                    "upstream_jid": "server-retirement-20210812-142753-1860"
+                }
+            },
+            "apig_jid": "update-ritm-stage-20210812-153437-882",
+            "apig_server": "kong.healthpartners.com",
+            "constraints": [
+                {
+                    "attributes": {
+                        "parent_record": "CHG0099011",
+                        "target_states": [
+                            "closed",
+                            "canceled",
+                            "cancelled"
+                        ],
+                        "task_short_descriptions": [
+                            "Remove Server From Network",
+                            "Remove Server From Nexpose"
+                        ],
+                        "terminate_states": {}
+                    },
+                    "type": "servicenow"
+                }
+            ],
+            "expected_http_response_codes": [
+                "200",
+                "201"
+            ],
+            "headers": "gAAAAABhFT-NvjRGTLgpJsuxeoeGFiCtuASohJxhqre-99ny83bzM1xEtCSBgsvYC-TLXEUwzDLK_VWRdcC2ZCpc_ekiG7uXTHEAoc5HodL45IYKKYBzZ5pjnrDJOZVRrJU476dHU668PMZk_1sl0TQc-9yvwNiE_ShM18rQWWFM_ha5bis5zPrpRqa1_JZrhYhPSwc0ogoWdVDs2BKba771mgi__VdOa3lG3_8fWj0yTqFZaIqHT3EOO6MLA91WUNT4eQ9aNpSIn985TByMihvZ1kPFZsyx_h9cPw687YvvA1qA7WHXph9ZX7ZiryaV4TRG8omzIa9dFeSuzKf-a78MEzXTUdHA0w==",
+            "job_created_epoch": 1628782477,
+            "job_created_timestamp": "2021-08-12T15:34:37.870754",
+            "microfunction": "update-ritm-stage",
+            "min_approvals_required": "1",
+            "orig-req-path": "https://kong.healthpartners.com/update-ritm-stage/",
+            "owners": [
+                "holden.c.smith@healthpartners.com",
+                "kevin.a.fischer@healthpartners.com",
+                "sravika.x.mandava@healthpartners.com"
+            ],
+            "requires_approval": false,
+            "status": "pending",
+            "timeline": [
+                {
+                    "epoch_time": 1628782477,
+                    "event": "job created",
+                    "status": "pending",
+                    "time": "08-12-2021 15:34:37"
+                }
+            ],
+            "type": "job"
+        }
+    },
+    {
+        "update-ritm-stage-20210812-144430-5468": {
+            "apig-payload": {
+                "inputs": {
+                    "meta": "Close CHG - we done",
+                    "parent_record": "CHG0099008",
+                    "stage_or_state": "closed",
+                    "upstream_jid": "server-retirement-20210812-142257-301"
+                }
+            },
+            "apig_jid": "update-ritm-stage-20210812-144430-5468",
+            "apig_server": "kong.healthpartners.com",
+            "constraints": [
+                {
+                    "attributes": {
+                        "parent_record": "CHG0099008",
+                        "target_states": [
+                            "closed",
+                            "canceled",
+                            "cancelled"
+                        ],
+                        "task_short_descriptions": [
+                            "Remove Server From Network",
+                            "Remove Server From Nexpose"
+                        ],
+                        "terminate_states": {}
+                    },
+                    "type": "servicenow"
+                }
+            ],
+            "expected_http_response_codes": [
+                "200",
+                "201"
+            ],
+            "headers": "gAAAAABhFTPNQ38gD_UwpGn7nfWidoNixY9WO-G7NdhE16LryldF1HIdi1H45eHLlLXSYJp-lK8DRNm73RE60i6wLU4ASOryxIoeWML6QH4exBLfT7OjwjXh1YJUYuDlxkpFyPXsFMVlUgsdF_18vsDbcLN5VowJPEBXKmApIkkDOM8xYB-Lmgm4sm-qpdDJXMHNsYE3_MBES1JNfTxj45EaA37xh6dl3W6g_hfZYRn3UaH7fTmQuLJFZ5Wk3pDBX24saGVlEbVzj2b2Ix1vdMOdcIl50SpfiS_vawO6MuptlEv-T3ZDBcdRwbZgy_Z1tg4Dj0ax-6BIHWmUVUNtLVpZ9Utvyk7VJw==",
+            "job_created_epoch": 1628779470,
+            "job_created_timestamp": "2021-08-12T14:44:30.574757",
+            "microfunction": "update-ritm-stage",
+            "min_approvals_required": "1",
+            "orig-req-path": "https://kong.healthpartners.com/update-ritm-stage/",
+            "owners": [
+                "holden.c.smith@healthpartners.com",
+                "kevin.a.fischer@healthpartners.com",
+                "sravika.x.mandava@healthpartners.com"
+            ],
+            "requires_approval": false,
+            "status": "pending",
+            "timeline": [
+                {
+                    "epoch_time": 1628779469,
+                    "event": "job created",
+                    "status": "pending",
+                    "time": "08-12-2021 14:44:29"
+                }
+            ],
+            "type": "job"
+        }
+    },
+    {
+        "notify-20210820-062242-8963": {
+            "apig-payload": {
+                "inputs": {
+                    "attributes": {
+                        "customer": "Martins",
+                        "sn_change": "CHG0099256",
+                        "sn_ritm": "RITM0761461",
+                        "target_server_name": "ld0004"
+                    },
+                    "recipients": [
+                        "kevin.a.fischer@healthpartners.com",
+                        "sravika.x.mandava@healthpartners.com",
+                        "holden.c.smith@healthpartners.com",
+                        "81a477fe.healthpartnersconnect.onmicrosoft.com@amer.teams.ms",
+                        "martins.i.sado@healthpartners.com",
+                        "istservers@healthpartners.com"
+                    ],
+                    "template": "server_retirement_complete",
+                    "template_url": "https://gitlab.healthpartners.com/server-retirement/server-retirement-communications/-/raw/master/templates.json",
+                    "upstream_jid": "server-retirement-20210819-212532-3748"
+                }
+            },
+            "apig_jid": "notify-20210820-062242-8963",
+            "apig_server": "kong.healthpartners.com",
+            "constraints": [
+                {
+                    "attributes": {
+                        "parent_record": "CHG0099256",
+                        "target_states": [
+                            "closed",
+                            "canceled",
+                            "cancelled"
+                        ],
+                        "task_short_descriptions": [
+                            "Remove Server From Network",
+                            "Remove Server From Nexpose"
+                        ],
+                        "terminate_states": {}
+                    },
+                    "type": "servicenow"
+                }
+            ],
+            "expected_http_response_codes": [
+                "200",
+                "201"
+            ],
+            "headers": "gAAAAABhH0oxYoRzkj2DObHGKnGbLLgz9U7BBgjQsIESmh53-a8BhcjqOS6QFm8ghIwcAAXQ5McrzDmh8pfaVzKof0q-xRQODzr0x_NXoTjK2I-yv0mLW7bzlj2OAAa7p_uL1zA5tadaqbSwvRjzyxi2KXq9lDQgMWiWj2gjBfna5t3HZGil80bJmSEAyHGTA4yGWJ8SS7bTyvE6jt88QqJWqCtzSSRA-43B0P6dkvCfBOA86W2sQAg=",
+            "job_created_epoch": 1629440562,
+            "job_created_timestamp": "2021-08-20T06:22:42.150523",
+            "microfunction": "notify",
+            "min_approvals_required": "1",
+            "orig-req-path": "https://kong.healthpartners.com/notify/",
+            "owners": [
+                "kevin.a.fischer@healthpartners.com",
+                "sravika.x.mandava@healthpartners.com",
+                "holden.c.smith@healthpartners.com",
+                "freligh.w.dalrymple@healthpartners.com"
+            ],
+            "requires_approval": false,
+            "status": "pending",
+            "timeline": [
+                {
+                    "epoch_time": 1629440561,
+                    "event": "job created",
+                    "status": "pending",
+                    "time": "08-20-2021 06:22:41"
+                }
+            ],
+            "type": "job"
+        }
+    }
+]
