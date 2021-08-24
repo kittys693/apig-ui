@@ -1,0 +1,480 @@
+{
+    "apig-payload": {
+    "inputs": {
+    "cmdb_ci": "001252e94f6be200f573dec85210c7f8",
+    "is_database": false,
+    "os": "linux",
+    "requester_email": "martins.i.sado@healthpartners.com",
+    "requester_group": "IS&T Security Vulnerability and Threat Management",
+    "requester_name": "Martins",
+    "sn_change": "CHG0099261",
+    "sn_ritm": "RITM0761467",
+    "target_server_name": "ld0007",
+    "upstream_jid": "manage-server-retirement-20210819-212729-8109"
+    }
+    },
+    "apig_jid": "server-retirement-20210819-212756-3677",
+    "apig_server": "kong.healthpartners.com",
+    "build_params": {
+    "apig_jid": "server-retirement-20210819-212756-3677",
+    "cmdb_ci": "001252e94f6be200f573dec85210c7f8",
+    "is_database": false,
+    "os": "linux",
+    "requester_email": "martins.i.sado@healthpartners.com",
+    "requester_group": "IS&T Security Vulnerability and Threat Management",
+    "requester_name": "Martins",
+    "sn_change": "CHG0099261",
+    "sn_ritm": "RITM0761467",
+    "target_server_name": "ld0007",
+    "upstream_jid": "manage-server-retirement-20210819-212729-8109"
+    },
+    "children_jobs": {
+    "communicate_retirement_complete": {
+    "all_jids": {},
+    "jid": "",
+    "retries_remaining": 0,
+    "status": "waiting"
+    },
+    "communicate_retirement_start": {
+    "all_jids": {},
+    "jid": "notify-20210820-060031-1425",
+    "retries_remaining": 0,
+    "status": "completed"
+    },
+    "remove_from_foglight": {
+    "all_jids": {
+    "foglight-20210820-060143-9800": "successful"
+    },
+    "begin_wait_time": 1629439303,
+    "jid": "foglight-20210820-060143-9800",
+    "retries_remaining": 0,
+    "status": "completed"
+    },
+    "remove_from_passwordsafe": {
+    "all_jids": {},
+    "jid": "",
+    "retries_remaining": 0,
+    "status": "waiting"
+    },
+    "remove_lag_ad": {
+    "all_jids": {},
+    "jid": "",
+    "retries_remaining": 0,
+    "status": "waiting"
+    },
+    "remove_server_from_backups": {
+    "all_jids": {},
+    "jid": "",
+    "retries_remaining": 0,
+    "status": "waiting"
+    },
+    "remove_vmware_guest": {
+    "all_jids": {},
+    "jid": "",
+    "retries_remaining": 0,
+    "status": "waiting"
+    },
+    "sn_manage_tasks_ad_and_passwordsafe": {
+    "all_jids": {},
+    "jid": "",
+    "retries_remaining": 0,
+    "status": "waiting"
+    },
+    "sn_manage_tasks_passwordsafe_vmware_and_nexpose": {
+    "all_jids": {},
+    "jid": "",
+    "retries_remaining": 0,
+    "status": "waiting"
+    },
+    "sn_manage_tasks_remove_vmware_and_updatecmdb": {
+    "all_jids": {},
+    "jid": "",
+    "retries_remaining": 0,
+    "status": "waiting"
+    },
+    "sn_manage_tasks_update_cmdb_and_network": {
+    "all_jids": {},
+    "jid": "",
+    "retries_remaining": 0,
+    "status": "waiting"
+    },
+    "sn_req_open_remove_from_autosys": {
+    "all_jids": {},
+    "jid": "",
+    "retries_remaining": 0,
+    "status": "waiting"
+    },
+    "sn_req_open_remove_logrythm": {
+    "all_jids": {},
+    "jid": "",
+    "retries_remaining": 0,
+    "status": "waiting"
+    },
+    "sn_req_open_remove_securelink": {
+    "all_jids": {},
+    "jid": "",
+    "retries_remaining": 0,
+    "status": "waiting"
+    },
+    "sn_task_close_backups": {
+    "all_jids": {},
+    "jid": "",
+    "retries_remaining": 0,
+    "status": "waiting"
+    },
+    "sn_task_close_foglight": {
+    "all_jids": {
+    "manage-servicenow-tasks-20210820-060328-770": "successful"
+    },
+    "begin_wait_time": 1629439408,
+    "jid": "manage-servicenow-tasks-20210820-060328-770",
+    "retries_remaining": 0,
+    "status": "completed"
+    },
+    "sn_task_close_unix_retirement": {
+    "all_jids": {},
+    "jid": "",
+    "retries_remaining": 0,
+    "status": "waiting"
+    },
+    "sn_task_manage_backups": {
+    "all_jids": {},
+    "jid": "",
+    "retries_remaining": 0,
+    "status": "waiting"
+    },
+    "sn_task_manage_foglight": {
+    "all_jids": {
+    "manage-servicenow-tasks-20210820-060144-7790": "successful"
+    },
+    "begin_wait_time": 1629439304,
+    "jid": "manage-servicenow-tasks-20210820-060144-7790",
+    "retries_remaining": 0,
+    "status": "completed"
+    },
+    "sn_task_manage_remove_lag_ad": {
+    "all_jids": {},
+    "jid": "",
+    "retries_remaining": 0,
+    "status": "waiting"
+    },
+    "sn_task_manage_unix_retirement": {
+    "all_jids": {},
+    "jid": "",
+    "retries_remaining": 0,
+    "status": "waiting"
+    },
+    "sn_task_retirement_core": {
+    "all_jids": {
+    "manage-servicenow-tasks-20210820-060038-8600": "successful"
+    },
+    "begin_wait_time": 1629439238,
+    "jid": "manage-servicenow-tasks-20210820-060038-8600",
+    "retries_remaining": 0,
+    "status": "completed"
+    },
+    "sn_task_retirement_linux": {
+    "all_jids": {
+    "manage-servicenow-tasks-20210820-060041-2092": "successful"
+    },
+    "begin_wait_time": 1629439241,
+    "jid": "manage-servicenow-tasks-20210820-060041-2092",
+    "retries_remaining": 0,
+    "status": "completed"
+    },
+    "sn_update_chg_implement": {
+    "all_jids": {},
+    "jid": "update-ritm-stage-20210820-060034-6765",
+    "retries_remaining": 0,
+    "status": "completed"
+    },
+    "sn_update_chg_review": {
+    "all_jids": {},
+    "jid": "",
+    "retries_remaining": 0,
+    "status": "waiting"
+    },
+    "sn_update_chg_state_complete": {
+    "all_jids": {},
+    "jid": "",
+    "retries_remaining": 0,
+    "status": "waiting"
+    },
+    "sn_update_ritm_stage_complete": {
+    "all_jids": {},
+    "jid": "",
+    "retries_remaining": 0,
+    "status": "waiting"
+    },
+    "unix_final_retirement": {
+    "all_jids": {},
+    "jid": "",
+    "retries_remaining": 0,
+    "status": "waiting"
+    },
+    "unix_server_pretirement": {
+    "all_jids": {
+    "unix-server-pretirement-20210820-060326-9729": "started"
+    },
+    "begin_wait_time": 1629439407,
+    "jid": "unix-server-pretirement-20210820-060326-9729",
+    "retries_remaining": 0,
+    "status": "running"
+    },
+    "update_cmdb": {
+    "all_jids": {},
+    "jid": "",
+    "retries_remaining": 0,
+    "status": "waiting"
+    }
+    },
+    "constraints": [],
+    "couchBaseRecordUuid": "3a04ba3c-232c-41bd-bf33-de1038570cd9",
+    "downstream_response": {
+    "allow_simultaneous": true,
+    "artifacts": {},
+    "controller_node": "",
+    "created": "2021-08-20T06:00:21.089525Z",
+    "description": "Runs irreversible server retirement processes",
+    "diff_mode": false,
+    "elapsed": 0,
+    "event_processing_finished": false,
+    "execution_node": "",
+    "extra_vars": "{\"conductor\": \"server_retirement\", \"cmdb_ci\": \"001252e94f6be200f573dec85210c7f8\", \"is_database\": false, \"os\": \"linux\", \"requester_email\": \"martins.i.sado@healthpartners.com\", \"requester_group\": \"IS&T Security Vulnerability and Threat Management\", \"requester_name\": \"Martins\", \"sn_change\": \"CHG0099261\", \"sn_ritm\": \"RITM0761467\", \"target_server_name\": \"ld0007\", \"upstream_jid\": \"manage-server-retirement-20210819-212729-8109\", \"apig_jid\": \"server-retirement-20210819-212756-3677\", \"apig_host\": \"kong.healthpartners.com\"}",
+    "failed": false,
+    "finished": null,
+    "force_handlers": false,
+    "forks": 0,
+    "id": 26608,
+    "ignored_fields": {},
+    "instance_group": null,
+    "inventory": 5,
+    "job": 26608,
+    "job_args": "",
+    "job_cwd": "",
+    "job_env": {},
+    "job_explanation": "",
+    "job_slice_count": 1,
+    "job_slice_number": 0,
+    "job_tags": "",
+    "job_template": 186,
+    "job_type": "run",
+    "launch_type": "manual",
+    "limit": "macys-poc",
+    "modified": "2021-08-20T06:00:21.141908Z",
+    "name": "server_retirement",
+    "passwords_needed_to_start": [],
+    "playbook": "site.yml",
+    "project": 182,
+    "related": {
+    "activity_stream": "/api/v2/jobs/26608/activity_stream/",
+    "cancel": "/api/v2/jobs/26608/cancel/",
+    "create_schedule": "/api/v2/jobs/26608/create_schedule/",
+    "created_by": "/api/v2/users/154/",
+    "credentials": "/api/v2/jobs/26608/credentials/",
+    "extra_credentials": "/api/v2/jobs/26608/extra_credentials/",
+    "inventory": "/api/v2/inventories/5/",
+    "job_events": "/api/v2/jobs/26608/job_events/",
+    "job_host_summaries": "/api/v2/jobs/26608/job_host_summaries/",
+    "job_template": "/api/v2/job_templates/186/",
+    "labels": "/api/v2/jobs/26608/labels/",
+    "modified_by": "/api/v2/users/154/",
+    "notifications": "/api/v2/jobs/26608/notifications/",
+    "project": "/api/v2/projects/182/",
+    "relaunch": "/api/v2/jobs/26608/relaunch/",
+    "stdout": "/api/v2/jobs/26608/stdout/",
+    "unified_job_template": "/api/v2/job_templates/186/"
+    },
+    "result_traceback": "",
+    "scm_branch": "",
+    "scm_revision": "",
+    "skip_tags": "",
+    "start_at_task": "",
+    "started": null,
+    "status": "pending",
+    "summary_fields": {
+    "created_by": {
+    "first_name": "retirement user",
+    "id": 154,
+    "last_name": "",
+    "username": "bs-retirement"
+    },
+    "credentials": [
+    {
+    "cloud": false,
+    "description": "",
+    "id": 6,
+    "kind": "ssh",
+    "name": "macys_poc"
+    },
+    {
+    "cloud": false,
+    "description": "",
+    "id": 35,
+    "kind": "vault",
+    "name": "retirement_conductors"
+    }
+    ],
+    "extra_credentials": [],
+    "inventory": {
+    "description": "Runner with Python 3",
+    "groups_with_active_failures": 0,
+    "has_active_failures": false,
+    "has_inventory_sources": true,
+    "hosts_with_active_failures": 0,
+    "id": 5,
+    "inventory_sources_with_failures": 0,
+    "kind": "",
+    "name": "asp_runner",
+    "organization_id": 1,
+    "total_groups": 1,
+    "total_hosts": 2,
+    "total_inventory_sources": 1
+    },
+    "job_template": {
+    "description": "Runs irreversible server retirement processes",
+    "id": 186,
+    "name": "server_retirement"
+    },
+    "labels": {
+    "count": 0,
+    "results": []
+    },
+    "modified_by": {
+    "first_name": "retirement user",
+    "id": 154,
+    "last_name": "",
+    "username": "bs-retirement"
+    },
+    "project": {
+    "description": "Hosts all the conductors used in server retirement",
+    "id": 182,
+    "name": "server-retirement-conductors",
+    "scm_type": "git",
+    "status": "successful"
+    },
+    "unified_job_template": {
+    "description": "Runs irreversible server retirement processes",
+    "id": 186,
+    "name": "server_retirement",
+    "unified_job_type": "job"
+    },
+    "user_capabilities": {
+    "delete": true,
+    "start": true
+    }
+    },
+    "timeout": 0,
+    "type": "job",
+    "unified_job_template": 186,
+    "url": "/api/v2/jobs/26608/",
+    "use_fact_cache": false,
+    "verbosity": 0,
+    "webhook_credential": null,
+    "webhook_guid": "",
+    "webhook_service": ""
+    },
+    "event": "sn_task_close_foglight successful (manage-servicenow-tasks-20210820-060328-770)",
+    "expected_http_response_codes": [
+    "200",
+    "201"
+    ],
+    "headers": "gAAAAABhHszbToWQbzsiINw_eG1E6eLJg6W__fBpAtWFLUqpZt-ayRo5AMQvsPinfeVgNVCgDygt7_4CvgE1KLi1EelvXVghnd3R-wahTK1yRaRszdVq7nCZr0FbXm256kR6CNxTV9wjSEwn4UftJNa6e6MbxzbfHejLlkiSo5KT-HVNW7np_nFFH_WN0vdSxK9lN12ntdu-UajnfFRrLlp9ReLOrGKyFV96EJZ6GSO3YOt-hk_7eNYCeRrMR-8-WRL9xv8D5achJEnBUVnmybwpl7g9BZ5EgnFBgYAVwwg1L-vl-Ve5tZ3ex8U1H0wNwQKPT90Fw9-fllkLdNcLSpdDr5KfBIZNFw==",
+    "job_created_epoch": 1629408476,
+    "job_created_timestamp": "2021-08-19T21:27:56.494266",
+    "job_duration_seconds": 83029,
+    "job_finished_epoch": 1629491505,
+    "job_finished_timestamp": "2021-08-20T20:31:45.139137",
+    "microfunction": "server-retirement",
+    "min_approvals_required": "1",
+    "orig-req-path": "https://kong.healthpartners.com/server-retirement/",
+    "owners": [
+    "kevin.a.fischer@healthpartners.com",
+    "sravika.x.mandava@healthpartners.com",
+    "holden.c.smith@healthpartners.com",
+    "freligh.w.dalrymple@healthpartners.com"
+    ],
+    "requires_approval": false,
+    "status": "started",
+    "timeline": [
+    {
+    "epoch_time": 1629408475,
+    "event": "job created",
+    "status": "pending",
+    "time": "08-19-2021 21:27:55"
+    },
+    {
+    "epoch_time": 1629439221,
+    "event": "status changed",
+    "status": "started",
+    "time": "08-20-2021 06:00:21"
+    },
+    {
+    "epoch_time": 1629439238,
+    "event": "Started sn_task_retirement_core (manage-servicenow-tasks-20210820-060038-8600)",
+    "status": "started",
+    "time": "08-20-2021 06:00:38"
+    },
+    {
+    "epoch_time": 1629439241,
+    "event": "Started sn_task_retirement_linux (manage-servicenow-tasks-20210820-060041-2092)",
+    "status": "started",
+    "time": "08-20-2021 06:00:41"
+    },
+    {
+    "epoch_time": 1629439282,
+    "event": "sn_task_retirement_linux successful (manage-servicenow-tasks-20210820-060041-2092)",
+    "status": "started",
+    "time": "08-20-2021 06:01:22"
+    },
+    {
+    "epoch_time": 1629439302,
+    "event": "sn_task_retirement_core successful (manage-servicenow-tasks-20210820-060038-8600)",
+    "status": "started",
+    "time": "08-20-2021 06:01:42"
+    },
+    {
+    "epoch_time": 1629439303,
+    "event": "Started remove_from_foglight (foglight-20210820-060143-9800)",
+    "status": "started",
+    "time": "08-20-2021 06:01:43"
+    },
+    {
+    "epoch_time": 1629439304,
+    "event": "Started sn_task_manage_foglight (manage-servicenow-tasks-20210820-060144-7790)",
+    "status": "started",
+    "time": "08-20-2021 06:01:44"
+    },
+    {
+    "epoch_time": 1629439345,
+    "event": "sn_task_manage_foglight successful (manage-servicenow-tasks-20210820-060144-7790)",
+    "status": "started",
+    "time": "08-20-2021 06:02:25"
+    },
+    {
+    "epoch_time": 1629439406,
+    "event": "remove_from_foglight successful (foglight-20210820-060143-9800)",
+    "status": "started",
+    "time": "08-20-2021 06:03:26"
+    },
+    {
+    "epoch_time": 1629439407,
+    "event": "Started unix_server_pretirement (unix-server-pretirement-20210820-060326-9729)",
+    "status": "started",
+    "time": "08-20-2021 06:03:27"
+    },
+    {
+    "epoch_time": 1629439408,
+    "event": "Started sn_task_close_foglight (manage-servicenow-tasks-20210820-060328-770)",
+    "status": "started",
+    "time": "08-20-2021 06:03:28"
+    },
+    {
+    "epoch_time": 1629439450,
+    "event": "sn_task_close_foglight successful (manage-servicenow-tasks-20210820-060328-770)",
+    "status": "started",
+    "time": "08-20-2021 06:04:10"
+    }
+    ],
+    "type": "job"
+    }
