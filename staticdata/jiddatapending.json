@@ -1,0 +1,57 @@
+{
+    "apig-payload": {
+        "inputs": {
+            "meta": "Close RITM - we done",
+            "parent_record": "RITM0758616",
+            "stage_or_state": "complete",
+            "upstream_jid": "server-retirement-20210812-142257-301"
+        }
+    },
+    "apig_jid": "update-ritm-stage-20210812-144429-4375",
+    "apig_server": "kong.healthpartners.com",
+    "constraints": [
+        {
+            "attributes": {
+                "parent_record": "CHG0099008",
+                "target_states": [
+                    "closed",
+                    "canceled",
+                    "cancelled"
+                ],
+                "task_short_descriptions": [
+                    "Remove Server From Network",
+                    "Remove Server From Nexpose"
+                ],
+                "terminate_states": {}
+            },
+            "type": "servicenow"
+        }
+    ],
+    "couchBaseRecordUuid": "f7e854ac-0052-4831-8d8e-7861b73c0970",
+    "expected_http_response_codes": [
+        "200",
+        "201"
+    ],
+    "headers": "gAAAAABhFTPN9WCO8cRhfI3nCBOp4pD0yWWk4dPKq74XXfb8ZAKYAE84PpvtV3PNzAqy4e3Qy_5HtEge4xxZiWPfX2Owi-bBm-CS5Z1wHMsDAYx5T9y401gwnz6ZJMBgF00RO2ERU3Go3Oo8rxT4XdMcF7VAqEJzv46TqfhBlAiNoseTeaWRtIHtUgZ4VihBK_6RZNr-5UOBC6fjhwSSG8TObciONcMPwO4YzAb_xW8BdRss9BtyCKIopdB6z5GLCSYnrebOkU50FFX-SYTr7LIHj6ltDoZH0jJqbaSimZ19e5FP10btqLMxagsA0rtHJN7ZdiwlMpiEa2v8Pj7fYIZmZhgjXOeCwQ==",
+    "job_created_epoch": 1628779469,
+    "job_created_timestamp": "2021-08-12T14:44:29.743999",
+    "microfunction": "update-ritm-stage",
+    "min_approvals_required": "1",
+    "orig-req-path": "https://kong.healthpartners.com/update-ritm-stage/",
+    "owners": [
+        "holden.c.smith@healthpartners.com",
+        "kevin.a.fischer@healthpartners.com",
+        "sravika.x.mandava@healthpartners.com"
+    ],
+    "requires_approval": false,
+    "status": "pending",
+    "timeline": [
+        {
+            "epoch_time": 1628779469,
+            "event": "job created",
+            "status": "pending",
+            "time": "08-12-2021 14:44:29"
+        }
+    ],
+    "type": "job"
+}
